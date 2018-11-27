@@ -166,16 +166,15 @@
                                     <constraint firstItem="Epj-oB-o67" firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="width" id="eCR-qW-Rr9"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
                                 <rect key="frame" x="85" y="569" width="185" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="PB4-ab-3SV"/>
                                 </constraints>
                                 <state key="normal" image="next_round_success"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap events to learn more placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-kC-6Cc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap events to learn more placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-kC-6Cc">
                                 <rect key="frame" x="46" y="626" width="283" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -184,7 +183,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cLh-ml-2oC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="ItB-9z-FuQ"/>
+                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jj-kC-6Cc" secondAttribute="trailing" constant="46" id="dmG-nY-VE0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLh-ml-2oC" secondAttribute="trailing" constant="105" id="ery-gt-K06"/>
+                            <constraint firstAttribute="bottom" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="60" id="qyQ-Tx-510"/>
+                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="19" id="tfw-5T-P47"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jj-kC-6Cc" secondAttribute="bottom" constant="20" id="u23-6c-QXu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
