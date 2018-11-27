@@ -21,7 +21,7 @@
                                 <rect key="frame" x="38" y="55" width="300" height="400"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="Event Top Stack View">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="EventTopStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-HX-lHu">
@@ -51,7 +51,7 @@
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="wXB-fw-Xqt"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-8f-LQy" userLabel="Event Top Stack View">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-8f-LQy" userLabel="EventMiddleTopStackView">
                                         <rect key="frame" x="0.0" y="100" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Vz-dbp">
@@ -66,21 +66,32 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofr-fX-9Sz" userLabel="down_full">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-oB-o67" userLabel="UpDownStackNew">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="ofr-fX-9Sz" secondAttribute="height" multiplier="158:457" id="hDw-qs-zIF"/>
-                                                </constraints>
-                                                <state key="normal" image="down_full"/>
-                                                <state key="selected" image="down_full_selected"/>
-                                            </button>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-hF-6Dz" userLabel="UpHalfNew">
+                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="EFI-vT-IUC"/>
+                                                        </constraints>
+                                                        <state key="normal" image="up_half"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-m2-Tus" userLabel="DownHalfNew">
+                                                        <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="rEo-MG-7Vf"/>
+                                                        </constraints>
+                                                        <state key="normal" image="down_half"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="KqO-2x-qjL"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="egP-TF-8zY"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="Event Top Stack View">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="EventMiddleBottomStackView">
                                         <rect key="frame" x="0.0" y="200" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-N0-odD">
@@ -95,21 +106,32 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVd-hM-JsP" userLabel="down_full">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-yd-sFN" userLabel="UpDownStackNew">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="jVd-hM-JsP" secondAttribute="height" multiplier="158:457" id="ykM-2Z-6qJ"/>
-                                                </constraints>
-                                                <state key="normal" image="down_full"/>
-                                                <state key="selected" image="down_full_selected"/>
-                                            </button>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-oE-qJi" userLabel="UpHalfNew">
+                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="sgn-LS-idZ"/>
+                                                        </constraints>
+                                                        <state key="normal" image="up_half"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faT-11-yQ7" userLabel="DownHalfNew">
+                                                        <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="K6f-5M-Ct3"/>
+                                                        </constraints>
+                                                        <state key="normal" image="down_half"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="OqX-kH-nzT"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bcd-Y7-SrE"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="Event Top Stack View">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="EventBottomStackView">
                                         <rect key="frame" x="0.0" y="300" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-mA-Sdf">
@@ -124,12 +146,12 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-fO-Lkg" userLabel="down_full">
+                                            <button opaque="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-fO-Lkg" userLabel="up_full">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gJG-fO-Lkg" secondAttribute="height" multiplier="158:457" id="grC-rH-wNt"/>
                                                 </constraints>
-                                                <state key="normal" image="down_full"/>
+                                                <state key="normal" image="up_full"/>
                                                 <state key="selected" image="down_full_selected"/>
                                             </button>
                                         </subviews>
@@ -139,8 +161,12 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="2Oe-yd-sFN" firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="width" id="WMC-2m-gOl"/>
+                                    <constraint firstItem="Epj-oB-o67" firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="width" id="eCR-qW-Rr9"/>
+                                </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC">
+                            <button opaque="NO" contentMode="scaleAspectFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
                                 <rect key="frame" x="85" y="569" width="185" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="PB4-ab-3SV"/>
@@ -175,6 +201,9 @@
     <resources>
         <image name="down_full" width="158" height="457"/>
         <image name="down_full_selected" width="158" height="457"/>
+        <image name="down_half" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
+        <image name="up_full" width="158" height="457"/>
+        <image name="up_half" width="158" height="229"/>
     </resources>
 </document>
