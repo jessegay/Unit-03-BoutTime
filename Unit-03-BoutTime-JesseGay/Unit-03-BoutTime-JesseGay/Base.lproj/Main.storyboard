@@ -192,10 +192,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="down_Full" destination="Yy8-gV-dDH" id="4m1-jJ-hk4"/>
-                        <outlet property="myButton" destination="Yy8-gV-dDH" id="qMd-eO-aNE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
