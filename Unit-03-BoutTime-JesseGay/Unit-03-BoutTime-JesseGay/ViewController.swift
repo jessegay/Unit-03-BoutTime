@@ -23,24 +23,45 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        for label in eventLabels {
+//            if label.tag == 2 {
+//            label.text = "I've been changed"
+//            }
         
-        for i in 1...4 {
-        getRandomEvent()
+//        let label1 = eventLabels[1]
+//        print("\(label1.text)")
+        
+//        for i in 1...4 {
+//        getRandomEvent()
         }
     
         // MARK: - Helpers
         
         func getRandomEvent() {
-            let currentEvent = myGameManager.eventsInThisRound
+            //let currentEvent = myGameManager.eventsThisRound
             
-            // assign currentEvent.EventName to Label. Need to create IBOutlets first.
-            // How will I assign sequentially?
-        }
+            // assign currentEvent.EventName to Label. 
+            // How will I assign sequentially? for label in eventLabels and event in eventsThisRound {
+            // label.text = event.eventName   }
+    }
+    
+    func displayEvents() {
+//        myGameManager.getRandomEvents()
+//        let eventsThisRound = myGameManager.eventsThisRound {
+//            for label in eventLabels, event in eventsThisRound {
+//                label.text = event.eventName
+//            }
+//            
+//        }
+    }
+    
+    
+}
         
         
     
-    }
 
 
-}
+
+
 

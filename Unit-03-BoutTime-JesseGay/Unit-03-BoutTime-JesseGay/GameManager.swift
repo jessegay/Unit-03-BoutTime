@@ -16,32 +16,34 @@ class GameManager {
     
     // MARK: Properties
     let roundsPerGame = 6
+    let eventsPerRound = 4
     var roundsPlayed = 0
     var correctResponses = 0
     var indexOfSelectedEvent = 0 // might need better name
     var alreadyUsedInRound: [Int] = [] // use indices. Redundant?
-    var eventsInThisRound: [Event] = []
+    var eventsThisRound: [Event] = []
     let eventStruct = EventStruct () // This includes the array of all events which will be used to populate the labels
     
     
     
     // MARK: Methods
     
-    // getRandomEvent
-    func getRandomEvent() -> Event {
+    // getRandomEvents (and append to eventsThisRound? or should this be separate func?.) Wait, maybe this returns [Event]? How do I make it happen 4 timeS?
+    func getRandomEvents() -> [Event] {
         // Get random number. This is an intermediate var (which is checked for repetition within a given round before being assigned to indexOfSelectedEvent)
         var randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: eventStruct.eventCollection.count)
     
     // Check for repetition within round
-    while alreadyUsedInRound.contains(randomNumber)  {
-    randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: eventStruct.eventCollection.count)
-    }
-    indexOfSelectedEvent = randomNumber
-    // Add to alreadyAskedQuestions
-    alreadyUsedInRound.append(indexOfSelectedEvent)
-    // return the question
-    return eventStruct.eventCollection[indexOfSelectedEvent]
-    }
+        while alreadyUsedInRound.contains(randomNumber)  {
+            randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: eventStruct.eventCollection.count)
+            }
+            indexOfSelectedEvent = randomNumber
+            // Add to alreadyAskedQuestions
+            alreadyUsedInRound.append(indexOfSelectedEvent)
+                eventsThisRound.append(eventStruct.eventCollection[indexOfSelectedEvent])
+            // return the ARRAY of questions ? (rather than just a single question)
+            return eventsThisRound
+            }
     // Run this^ code 4 times? Maybe in viewDidLoad () {
     // for i in 1...4 {displayRandomEvent()}}
     
