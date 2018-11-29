@@ -33,11 +33,16 @@ class ViewController: UIViewController {
         
 //        for i in 1...4 {
 //        getRandomEvent()
+        
+        let arrayTest = myGameManager.getArrayOfRandomEvents()
+        print(arrayTest)
         }
     
         // MARK: - Helpers
-        
-        func getRandomEvent() {
+    
+    
+    
+        //func getRandomEvent() {
             //let currentEvent = myGameManager.eventsThisRound
             
             // assign currentEvent.EventName to Label. 
@@ -51,12 +56,12 @@ class ViewController: UIViewController {
 //            for label in eventLabels, event in eventsThisRound {
 //                label.text = event.eventName
 //            }
-//            
+//
 //        }
     }
     
     
-}
+
         
         
     
