@@ -19,7 +19,8 @@ class GameManager {
     var roundsPlayed = 0
     var correctResponses = 0
     var indexOfSelectedEvent = 0 // might need better name
-    var alreadyUsedInRound: [Int]   = [] // use indices
+    var alreadyUsedInRound: [Int] = [] // use indices. Redundant?
+    var eventsInThisRound: [Event] = []
     let eventStruct = EventStruct () // This includes the array of all events which will be used to populate the labels
     
     
@@ -41,6 +42,8 @@ class GameManager {
     // return the question
     return eventStruct.eventCollection[indexOfSelectedEvent]
     }
+    // Run this^ code 4 times? Maybe in viewDidLoad () {
+    // for i in 1...4 {displayRandomEvent()}}
     
     // Check final order
     //func isCorrect(//what goes here?)) -> Bool {

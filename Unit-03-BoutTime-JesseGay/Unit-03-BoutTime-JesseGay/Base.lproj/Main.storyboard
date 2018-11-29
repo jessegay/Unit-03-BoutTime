@@ -17,15 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-Xm-t2P">
-                                <rect key="frame" x="38" y="55" width="300" height="400"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-Xm-t2P">
+                                <rect key="frame" x="38" y="55" width="300" height="424"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="EventTopStackView">
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="EventTopStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-HX-lHu">
-                                                <rect key="frame" x="0.0" y="0.0" width="265.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 1">
                                                         <attributes>
@@ -50,12 +50,18 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="RLl-lK-ZaP"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="wXB-fw-Xqt"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-8f-LQy" userLabel="EventMiddleTopStackView">
-                                        <rect key="frame" x="0.0" y="100" width="300" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-8f-LQy" userLabel="EventMiddleTopStackView">
+                                        <rect key="frame" x="0.0" y="108" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Vz-dbp">
-                                                <rect key="frame" x="0.0" y="0.0" width="265.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 2">
                                                         <attributes>
@@ -91,11 +97,11 @@
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="egP-TF-8zY"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="EventMiddleBottomStackView">
-                                        <rect key="frame" x="0.0" y="200" width="300" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="EventMiddleBottomStackView">
+                                        <rect key="frame" x="0.0" y="216" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-N0-odD">
-                                                <rect key="frame" x="0.0" y="0.0" width="265.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 3">
                                                         <attributes>
@@ -131,11 +137,11 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bcd-Y7-SrE"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="EventBottomStackView">
-                                        <rect key="frame" x="0.0" y="300" width="300" height="100"/>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="EventBottomStackView">
+                                        <rect key="frame" x="0.0" y="324" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-mA-Sdf">
-                                                <rect key="frame" x="0.0" y="0.0" width="265.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 4">
                                                         <attributes>
@@ -180,7 +186,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cLh-ml-2oC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="ItB-9z-FuQ"/>
                             <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
