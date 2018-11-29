@@ -15,8 +15,10 @@ class ViewController: UIViewController {
     
     var myGameManager = GameManager()
     // MARK: - Outlets
-    
     // Put @IBOutlets here
+    
+    @IBOutlet var eventLabels: [UILabel]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,7 +27,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-HX-lHu">
                                                 <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 1">
+                                                    <fragment content="Historical Event 0">
                                                         <attributes>
                                                             <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                             <font key="NSFont" metaFont="system" size="17"/>
@@ -60,10 +60,10 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-8f-LQy" userLabel="EventMiddleTopStackView">
                                         <rect key="frame" x="0.0" y="108" width="300" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Vz-dbp">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Vz-dbp" userLabel="Historical Event 1">
                                                 <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 2">
+                                                    <fragment content="Historical Event 1">
                                                         <attributes>
                                                             <font key="NSFont" metaFont="system" size="17"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
@@ -100,10 +100,10 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="EventMiddleBottomStackView">
                                         <rect key="frame" x="0.0" y="216" width="300" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-N0-odD">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-N0-odD" userLabel="Historical Event 2">
                                                 <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 3">
+                                                    <fragment content="Historical Event 2">
                                                         <attributes>
                                                             <font key="NSFont" metaFont="system" size="17"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
@@ -140,10 +140,10 @@
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="EventBottomStackView">
                                         <rect key="frame" x="0.0" y="324" width="300" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-mA-Sdf">
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-mA-Sdf" userLabel="Historical Event 3">
                                                 <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 4">
+                                                    <fragment content="Historical Event 3">
                                                         <attributes>
                                                             <font key="NSFont" metaFont="system" size="17"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
@@ -198,6 +198,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="eventLabels" destination="DdT-HX-lHu" collectionClass="NSMutableArray" id="Olk-lg-HbW"/>
+                        <outletCollection property="eventLabels" destination="aH9-Vz-dbp" collectionClass="NSMutableArray" id="amF-nD-zTt"/>
+                        <outletCollection property="eventLabels" destination="1ib-N0-odD" collectionClass="NSMutableArray" id="oWG-Z1-uz8"/>
+                        <outletCollection property="eventLabels" destination="iva-mA-Sdf" collectionClass="NSMutableArray" id="J4e-eP-dgR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
