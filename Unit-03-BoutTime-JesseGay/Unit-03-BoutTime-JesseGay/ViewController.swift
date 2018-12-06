@@ -43,9 +43,9 @@ class ViewController: UIViewController {
     
     
         //func getRandomEvent() {
-            //let currentEvent = myGameManager.eventsThisRound
+            //let eventsThisRound = myGameManager.eventsThisRound
             
-            // assign currentEvent.EventName to Label. 
+            // assign currentEvent.EventName to Labels.
             // How will I assign sequentially? for label in eventLabels and event in eventsThisRound {
             // label.text = event.eventName   }
     }
