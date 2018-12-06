@@ -22,8 +22,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // FIXME: displayEvents() assigns the last event in the array to all labels, rather looping through and assigning first event to label 0, second to label 1, etc. I think there's a problem with my @IBOutlet collection or it's connections?
+        
         displayEvents()
-//            for label in eventLabels {
+
+        
+        // Test:           for label in eventLabels {
 //            if label.tag == 2 {
 //            label.text = "I've been changed"
 //            }
