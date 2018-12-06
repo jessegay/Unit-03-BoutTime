@@ -199,10 +199,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outletCollection property="eventLabels" destination="DdT-HX-lHu" collectionClass="NSMutableArray" id="Olk-lg-HbW"/>
                         <outletCollection property="eventLabels" destination="aH9-Vz-dbp" collectionClass="NSMutableArray" id="amF-nD-zTt"/>
                         <outletCollection property="eventLabels" destination="1ib-N0-odD" collectionClass="NSMutableArray" id="oWG-Z1-uz8"/>
                         <outletCollection property="eventLabels" destination="iva-mA-Sdf" collectionClass="NSMutableArray" id="J4e-eP-dgR"/>
+                        <outletCollection property="eventLabels" destination="DdT-HX-lHu" collectionClass="NSMutableArray" id="Yhx-lp-6yx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -59,6 +59,42 @@ class GameManager {
     // Check final order
     //func isCorrect(//what goes here?)) -> Bool {
     
+    /*
+     2 options from: https://stackoverflow.com/questions/24602595/extending-array-to-check-if-it-is-sorted-in-swift
+     
+     Simple:
+     extension Array where Element : Comparable {
+     func isSorted() -> Bool {
+     guard self.count > 1 else {
+     return true
+     }
+     
+     for i in 1..<self.count {
+     if self[i-1] > self[i] {
+     return false
+     }
+     }
+     return true
+     }
+     }
+     
+     With arguments for type of sort:
+     extension Array where Element: Comparable {
+     func isSorted(by isOrderedBefore: (Element, Element) -> Bool) -> Bool {
+     for i in stride(from: 1, to: self.count, by: 1) {
+     if !isOrderedBefore(self[i-1], self[i]) {
+     return false
+     }
+     }
+     return true
+     }
+     }
+     
+     
+     
+     
+     
+     */
     // if historicalEveent1.date > historicalEvent2.date etc. 
     
     

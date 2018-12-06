@@ -7,15 +7,13 @@
 //
 
 import UIKit
-
-
+import GameKit
 
 class ViewController: UIViewController {
     // MARK: Properties. Global variables go here.
     
     var myGameManager = GameManager()
-    // MARK: - Outlets
-    // Put @IBOutlets here
+    // MARK: - Outlets.  Use @IBOutlet collection instead of individual @IBOutlets for every label
     
     @IBOutlet var eventLabels: [UILabel]!
     
@@ -23,43 +21,30 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-//        for label in eventLabels {
+        
+        displayEvents()
+//            for label in eventLabels {
 //            if label.tag == 2 {
 //            label.text = "I've been changed"
 //            }
         
-//        let label1 = eventLabels[1]
-//        print("\(label1.text)")
-        
-//        for i in 1...4 {
-//        getRandomEvent()
-        
-        let arrayTest = myGameManager.getArrayOfRandomEvents()
-        print(arrayTest)
         }
     
         // MARK: - Helpers
     
-    
-    
-        //func getRandomEvent() {
-            //let eventsThisRound = myGameManager.eventsThisRound
-            
-            // assign currentEvent.EventName to Labels.
-            // How will I assign sequentially? for label in eventLabels and event in eventsThisRound {
-            // label.text = event.eventName   }
-    }
-    
     func displayEvents() {
-//        myGameManager.getRandomEvents()
-//        let eventsThisRound = myGameManager.eventsThisRound {
-//            for label in eventLabels, event in eventsThisRound {
-//                label.text = event.eventName
-//            }
-//
-//        }
+        // get array of random events
+        let eventsThisRound = myGameManager.getArrayOfRandomEvents()
+        // check contents of eventsThisRound
+        print(eventsThisRound)
+        // assign them to eventLabels
+        for label in eventLabels {
+            for event in eventsThisRound {
+            label.text = event.eventName
+            }
+        }
     }
-    
+}
     
 
         
