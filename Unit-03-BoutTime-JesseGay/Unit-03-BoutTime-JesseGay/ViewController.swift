@@ -42,10 +42,10 @@ class ViewController: UIViewController {
         // check contents of eventsThisRound
         print(eventsThisRound)
         // assign them to eventLabels
-        for label in eventLabels {
-            for event in eventsThisRound {
+       // for label in eventLabels {
+            for (event, label) in zip(eventsThisRound, eventLabels) {
             label.text = event.eventName
-            }
+            //}
         }
     }
 }
