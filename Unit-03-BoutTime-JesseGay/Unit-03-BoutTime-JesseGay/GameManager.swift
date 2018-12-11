@@ -60,6 +60,17 @@ class GameManager {
     //func isCorrect(//what goes here?)) -> Bool {
     
     /*
+     
+     
+     let arrayFinal = [an array of the dates of the events from the labels]
+     But how do I access the date property of each event now that I've separated the event name from the event itself.
+     When I move the event names between buttons, there is no longer a link between the actual Event and the name.
+     Wait, maybe I preserve the eventsThisRound array, and re-render after every move(if that's even needed.) So each button will increment or decrement the index of its current event.
+     
+     if arrayFinal.isSorted() = true {} else {}
+     Although if I manipulate the positions of eventsThisRound, I might not even need the new var arrayFinal, I can just use eventsThisRound.
+     
+     ---
      2 options from: https://stackoverflow.com/questions/24602595/extending-array-to-check-if-it-is-sorted-in-swift
      
      Simple:
