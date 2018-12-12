@@ -63,13 +63,15 @@ class GameManager {
     
     
    
-     func isCorrect(datesThisRound: [Int]) -> Bool {
-        //let datesThisRound = dateThisRound // from global scope. Or do I just create it locally at time of checking? e.g.
-     for Event in eventsThisRound {
-     var datesThisRound: [Int] = []
-     datesThisRound += [Event.date]
-     // Maybe this^ goes in checkAnswer. Then datesThisRound will be created at the right time and available to be passed into isCorrect. Wait, Maybe I'm overcomplicating. Need to step away.
-     }
+     func isCorrect(datesThisRound: [Int]) -> Bool
+     
+     {
+//        //let datesThisRound = dateThisRound // from global scope. Or do I just create it locally at time of checking? e.g.
+//     for Event in eventsThisRound {
+//     var datesThisRound: [Int] = []
+//     datesThisRound += [Event.date]
+//     // Maybe this^ goes in checkAnswer. Then datesThisRound will be created at the right time and available to be passed into isCorrect. Wait, Maybe I'm overcomplicating. Need to step away.
+//     }
         if datesThisRound.isSorted() {
             correctResponses += 1
             return true

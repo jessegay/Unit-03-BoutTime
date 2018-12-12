@@ -55,7 +55,7 @@ class ViewController: UIViewController {
     @IBAction func checkAnswer(_ sender: UIEvent?) {
         myGameManager.roundsPlayed += 1
         
-        // Create an array of dates of the events from their position AT THIS TIME. Or is this unnecessary?
+        // Create an array of dates of the events from their position AT THIS TIME. Should this be it's own method?
         for Event in myGameManager.eventsThisRound {
             var datesThisRound: [Int] = []
             datesThisRound += [Event.date]
@@ -67,10 +67,10 @@ class ViewController: UIViewController {
                 // do something else.
             }
         
+        }
+        
     }
-    
 }
-    
 
         
         
