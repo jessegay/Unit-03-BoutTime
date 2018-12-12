@@ -22,6 +22,7 @@ class GameManager {
     var indexOfSelectedEvent = 0 // might need better name
     var alreadyUsedInRound: [Int] = [] // use indices. Redundant?
     var eventsThisRound: [Event] = []
+    // var datesThisRound: [Int] = [] // use datesThisRound.isSorted() to check if correct. Maybe this should only exist in the isCorrect function, and be created at time of checking so it will reflect the order of eventsThisRound AT THAT TIME.
     let eventStruct = EventStruct () // This includes the array of all events which will be used to populate the labels
     
     
@@ -54,21 +55,39 @@ class GameManager {
             return eventsThisRound
     }
 
+  
+    
     
     
     // Check final order
-    //func isCorrect(//what goes here?)) -> Bool {
     
-    /*
+    
+   
+     func isCorrect(datesThisRound: [Int]) -> Bool {
+        //let datesThisRound = dateThisRound // from global scope. Or do I just create it locally at time of checking? e.g.
+     for Event in eventsThisRound {
+     var datesThisRound: [Int] = []
+     datesThisRound += [Event.date]
+     // Maybe this^ goes in checkAnswer. Then datesThisRound will be created at the right time and available to be passed into isCorrect. Wait, Maybe I'm overcomplicating. Need to step away.
+     }
+        if datesThisRound.isSorted() {
+            correctResponses += 1
+            return true
+            } else {
+            return false
+            }
+        }
      
+     /*
+     let datesThisRound = [an array of the dates of the eventsThisRound]
      
-     let arrayFinal = [an array of the dates of the events from the labels]
+     But should it be created only at the time of checkAnswer()? Since that will reflect the order at that moment.
+     If it's created upon the first instantiation of eventsThisRound, then how will it know when the order of eventsThisRound is changed?
+     
      But how do I access the date property of each event now that I've separated the event name from the event itself.
      When I move the event names between buttons, there is no longer a link between the actual Event and the name.
      Wait, maybe I preserve the eventsThisRound array, and re-render after every move(if that's even needed.) So each button will increment or decrement the index of its current event.
      
-     if arrayFinal.isSorted() = true {} else {}
-     Although if I manipulate the positions of eventsThisRound, I might not even need the new var arrayFinal, I can just use eventsThisRound.
      
      ---
      2 options from: https://stackoverflow.com/questions/24602595/extending-array-to-check-if-it-is-sorted-in-swift

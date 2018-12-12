@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // FIXME: displayEvents() assigns the last event in the array to all labels, rather looping through and assigning first event to label 0, second to label 1, etc. I think there's a problem with my @IBOutlet collection or it's connections?
+        // FIXME: displayEvents() works, but it actually does 2 things, get random events and display them. Does display need to be broken out into its own function so it can be repeatedly called each time the events are moved?
         
         displayEvents()
 
@@ -36,18 +36,39 @@ class ViewController: UIViewController {
     
         // MARK: - Helpers
     
+    
     func displayEvents() {
         // get array of random events
         let eventsThisRound = myGameManager.getArrayOfRandomEvents()
-        // check contents of eventsThisRound
+        // check contents of eventsThisRound. Can be delted eventually.
         print(eventsThisRound)
         // assign them to eventLabels
-       // for label in eventLabels {
             for (event, label) in zip(eventsThisRound, eventLabels) {
             label.text = event.eventName
-            //}
+            }
         }
+    
+    // MARK: Actions
+    
+    // This might need to be in an if statement if motion == .motionShake as per https://www.ioscreator.com/tutorials/detect-shake-gestures-ios-tutorial-ios10
+    
+    @IBAction func checkAnswer(_ sender: UIEvent?) {
+        myGameManager.roundsPlayed += 1
+        
+        // Create an array of dates of the events from their position AT THIS TIME. Or is this unnecessary?
+        for Event in myGameManager.eventsThisRound {
+            var datesThisRound: [Int] = []
+            datesThisRound += [Event.date]
+            
+            // Check if they are in order
+            if myGameManager.isCorrect(datesThisRound: datesThisRound) {
+                // do something
+            } else {
+                // do something else.
+            }
+        
     }
+    
 }
     
 
