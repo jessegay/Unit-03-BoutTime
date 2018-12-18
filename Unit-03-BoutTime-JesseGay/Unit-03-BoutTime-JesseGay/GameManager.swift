@@ -29,13 +29,14 @@ class GameManager {
     
     // MARK: Methods
     
-    // getRandomEvents (and append to eventsThisRound) Wait, maybe this returns [Event]? How do I make it happen 4 times? Maybe func within a fun. getArrayOfRandomEvents() -> [Event] which contains getRandomEvent(), which returns nothing, but adds a random event to eventsThisRound, and is run 4 times.
+    // getArrayOfRandomEvents() -> [Event]  Contains getRandomEvent(), which returns nothing, but adds a random event to eventsThisRound, and is run 4 times.
     
     func getArrayOfRandomEvents() -> [Event] {
-    
+        //var eventsThisRound: [Event] = []
     
         // Helper Method
-        func getRandomEvents() {
+        func getRandomEvent() {
+            
             // Get random number. This is an intermediate var (which is checked for repetition within a given round before being assigned to indexOfSelectedEvent)
             var randomNumber = GKRandomSource.sharedRandom().nextInt(upperBound: eventStruct.eventCollection.count)
         
@@ -50,14 +51,12 @@ class GameManager {
                 }
             // Repeat 4 times. Use eventsPerRound instead of 4 to avoid magic numbers.
             for _ in 1...eventsPerRound {
-            getRandomEvents()
+            getRandomEvent()
             }
             return eventsThisRound
     }
 
-  
-    
-    
+
     
     // Check final order
     
