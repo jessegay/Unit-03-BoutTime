@@ -32,7 +32,7 @@ class GameManager {
     // getArrayOfRandomEvents() -> [Event]  Contains getRandomEvent(), which returns nothing, but adds a random event to eventsThisRound, and is run 4 times.
     
     func getArrayOfRandomEvents() -> [Event] {
-        //var eventsThisRound: [Event] = []
+        var eventsThisRound: [Event] = [] // Name this something else (eventsInThisArray?) so it's less confusing
     
         // Helper Method
         func getRandomEvent() {
