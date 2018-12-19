@@ -17,6 +17,10 @@ class ViewController: UIViewController {
  
     @IBOutlet var eventLabels: [UILabel]!
     
+    @IBOutlet weak var nextRound: UIButton!
+    
+
+    @IBOutlet weak var instructions: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +29,8 @@ class ViewController: UIViewController {
         getRandomEvents()
         // Display them on the eventLabels
         displayEvents()
-
-        
+        instructions.text = "Shake to complete"
+        nextRound.isHidden = true
         }
     
         // MARK: - Helpers
@@ -61,8 +65,10 @@ class ViewController: UIViewController {
             // Check if they are in order
             if myGameManager.isCorrect(datesThisRound: datesThisRound) {
                 // do something
+                myGameManager.correctResponses += 1
             } else {
                 // do something else.
+                // nextRound.imageView =    // change image to next_round_fail
             }
         }
     }
