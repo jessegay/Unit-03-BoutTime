@@ -21,16 +21,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // FIXME: displayEvents() works, but it actually does 2 things, get random events and display them. Does display need to be broken out into its own function so it can be repeatedly called each time the events are moved? Unit02 did it like this.
-        myGameManager.eventsThisRound = myGameManager.getArrayOfRandomEvents()
+        // Create array of 4 random, non-repeating events
+        getRandomEvents()
+        // Display them on the eventLabels
         displayEvents()
 
         
         }
     
         // MARK: - Helpers
-  
+        func getRandomEvents() {
+        myGameManager.eventsThisRound = myGameManager.getArrayOfRandomEvents()
+        }
+    
         func displayEvents() {
         // get array of random events. Is it weird that I'm using the same name as the var eventsThisRound in the GameManagerdefinition? Yes. Fixed (I think) by breaking out the getting of the array.
         //let eventsThisRound = myGameManager.getArrayOfRandomEvents()
