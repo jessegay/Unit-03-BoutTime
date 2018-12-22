@@ -54,10 +54,10 @@ class ViewController: UIViewController {
     
     // checkAnswer() might need to be in an if statement if motion == .motionShake as per https://www.ioscreator.com/tutorials/detect-shake-gestures-ios-tutorial-ios10
     
-    @IBAction func checkAnswer(_ sender: UIEvent?) {
+    func checkAnswer() {
         myGameManager.roundsPlayed += 1
         
-        // Create an array of dates of the events from their position AT THIS TIME. Should this be it's own method? Up/down buttons will change order of Events in myGameManger.eventsThisRound.
+        // Create an array of dates of the events from their position AT THIS TIME. Up/down buttons will change order of Events in myGameManger.eventsThisRound.
         for Event in myGameManager.eventsThisRound {
             var datesThisRound: [Int] = []
             datesThisRound += [Event.date]
@@ -68,9 +68,14 @@ class ViewController: UIViewController {
                 myGameManager.correctResponses += 1
             } else {
                 // do something else.
-                // nextRound.imageView =    // change image to next_round_fail
+                print("I've been shook") // for testing. Delete.
+                nextRound.image = UIImage(named: "next_round_fail")   // change image to next_round_fail
             }
         }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        checkAnswer()
     }
 }
 
