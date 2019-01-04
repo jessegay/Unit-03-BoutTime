@@ -52,30 +52,40 @@ class ViewController: UIViewController {
   
     // MARK: Actions
     
-    // checkAnswer() might need to be in an if statement if motion == .motionShake as per https://www.ioscreator.com/tutorials/detect-shake-gestures-ios-tutorial-ios10
+    // checkAnswer()
     
     func checkAnswer() {
         myGameManager.roundsPlayed += 1
-        
+        print("check answer() happened") // for testing. Delete.
         // Create an array of dates of the events from their position AT THIS TIME. Up/down buttons will change order of Events in myGameManger.eventsThisRound.
         for Event in myGameManager.eventsThisRound {
             var datesThisRound: [Int] = []
             datesThisRound += [Event.date]
+            print(datesThisRound) // for testing. Delete.
+            
+            // For loop needs to end here, but datesThisRound needs to be passed to isCorrect(). 
             
             // Check if they are in order
             if myGameManager.isCorrect(datesThisRound: datesThisRound) {
                 // do something
                 myGameManager.correctResponses += 1
+                print("incorrect") // for testing. Delete.
             } else {
                 // do something else.
-                print("I've been shook") // for testing. Delete.
-                nextRound.image = UIImage(named: "next_round_fail")   // change image to next_round_fail
+                print("incorrect") // for testing. Delete.
+             /*   nextRound.image = UIImage(named: "next_round_fail")   // change image to next_round_fail */
+                let failButton = UIImage(named: "next_round_fail")
+                nextRound.setImage(failButton, for: .normal)
             }
+            //nextRound.isEnabled = true // Is this needed? Aren't buttons enabled by default?
+            nextRound.isHidden = false
         }
     }
     
+    //  Call checkAnswer() via Shake.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        checkAnswer()
+         checkAnswer()
+        // print("I've been shook") // for testing. Delete.
     }
 }
 
