@@ -22,7 +22,7 @@ class GameManager {
     var indexOfSelectedEvent = 0 // might need better name
     var alreadyUsedInRound: [Int] = [] // use indices. Redundant?
     var eventsThisRound: [Event] = []
-    // var datesThisRound: [Int] = [] // use datesThisRound.isSorted() to check if correct. Maybe this should only exist in the isCorrect function, and be created at time of checking so it will reflect the order of eventsThisRound AT THAT TIME. Wait, it should still be able to be caluculated at that time.
+    var datesThisRound: [Int] = [] // use datesThisRound.isSorted() to check if correct. Will be modified by checkAnswer() based on position of Events in eventsThisRound at time of checking
     let eventStruct = EventStruct () // This includes the array of all events which will be used to populate the labels
     
     
@@ -71,7 +71,7 @@ class GameManager {
      
      /*
      let datesThisRound = [an array of the dates of eventsThisRound]
-     It will be created only at the time of checkAnswer() since that will reflect the order at that moment.
+     It will be modified at the time of checkAnswer() since that will reflect the order at that moment.
      Use eventsThisRound array as source of truth. Each button will increment or decrement the index of its current event and displayEvents() after every move (to update the sppearance of the labels.)
    
      ---

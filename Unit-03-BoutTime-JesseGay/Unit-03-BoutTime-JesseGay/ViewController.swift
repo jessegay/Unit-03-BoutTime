@@ -59,14 +59,13 @@ class ViewController: UIViewController {
         print("check answer() happened") // for testing. Delete.
         // Create an array of dates of the events from their position AT THIS TIME. Up/down buttons will change order of Events in myGameManger.eventsThisRound.
         for Event in myGameManager.eventsThisRound {
-            var datesThisRound: [Int] = []
-            datesThisRound += [Event.date]
-            print(datesThisRound) // for testing. Delete.
-            
-            // For loop needs to end here, but datesThisRound needs to be passed to isCorrect(). 
+            myGameManager.datesThisRound += [Event.date]
+        }
+            print(myGameManager.datesThisRound) // for testing. Delete.
+        
             
             // Check if they are in order
-            if myGameManager.isCorrect(datesThisRound: datesThisRound) {
+            if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
                 // do something
                 myGameManager.correctResponses += 1
                 print("incorrect") // for testing. Delete.
@@ -79,8 +78,10 @@ class ViewController: UIViewController {
             }
             //nextRound.isEnabled = true // Is this needed? Aren't buttons enabled by default?
             nextRound.isHidden = false
+            // reset myGameManager.datesThisRound to empty.
+            myGameManager.datesThisRound = []
         }
-    }
+    
     
     //  Call checkAnswer() via Shake.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -88,7 +89,6 @@ class ViewController: UIViewController {
         // print("I've been shook") // for testing. Delete.
     }
 }
-
         
         
     
