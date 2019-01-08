@@ -36,11 +36,10 @@ class ViewController: UIViewController {
         // MARK: - Helpers
         func getRandomEvents() {
         myGameManager.eventsThisRound = myGameManager.getArrayOfRandomEvents()
-        }
+        } // Do I need this helper or should I just use myGameManager.eventsThisRound = myGameManager.getArrayOfRandomEvents() in viewDidLoad?
     
         func displayEvents() {
-        // get array of random events. Is it weird that I'm using the same name as the var eventsThisRound in the GameManagerdefinition? Yes. Fixed (I think) by breaking out the getting of the array.
-        //let eventsThisRound = myGameManager.getArrayOfRandomEvents()
+        // assign myGameManager.eventsThisRound contents to the labels in storyboard.
         // check contents of eventsThisRound. Can be deleted eventually.
         print(myGameManager.eventsThisRound)
         // assign them to eventLabels
@@ -49,8 +48,21 @@ class ViewController: UIViewController {
             }
         }
     
-  
+
+        
+    
     // MARK: Actions
+    
+    // moveUp()
+    
+    // Move up. swap item at index(tag+1) with item at index(tag).
+    func moveUp(_ sender: UIButton) {
+        let tagOfButtonPressed = sender.tag
+        let tagAbove = tagOfButtonPressed + 1
+        myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagAbove)
+        displayEvents()
+    }
+    // moveDown()
     
     // checkAnswer()
     
