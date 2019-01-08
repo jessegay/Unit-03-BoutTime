@@ -75,14 +75,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-oB-o67" userLabel="UpDownStackNew">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-hF-6Dz" userLabel="UpHalfNew">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-hF-6Dz" userLabel="UpHalfNew">
                                                         <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="EFI-vT-IUC"/>
                                                         </constraints>
                                                         <state key="normal" image="up_half"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-m2-Tus" userLabel="DownHalfNew">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-m2-Tus" userLabel="DownHalfNew">
                                                         <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="rEo-MG-7Vf"/>
@@ -115,14 +115,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-yd-sFN" userLabel="UpDownStackNew">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-oE-qJi" userLabel="UpHalfNew">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-oE-qJi" userLabel="UpHalfNew">
                                                         <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="sgn-LS-idZ"/>
                                                         </constraints>
                                                         <state key="normal" image="up_half"/>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faT-11-yQ7" userLabel="DownHalfNew">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faT-11-yQ7" userLabel="DownHalfNew">
                                                         <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="K6f-5M-Ct3"/>
@@ -152,13 +152,16 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-fO-Lkg" userLabel="up_full">
+                                            <button opaque="NO" tag="3" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-fO-Lkg" userLabel="up_full">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gJG-fO-Lkg" secondAttribute="height" multiplier="158:457" id="grC-rH-wNt"/>
                                                 </constraints>
                                                 <state key="normal" image="up_full"/>
                                                 <state key="selected" image="down_full_selected"/>
+                                                <connections>
+                                                    <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BR7-Mw-HVE"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
