@@ -70,7 +70,12 @@ class ViewController: UIViewController {
         displayEvents()
     }
     // moveDown()
-    
+    @IBAction func moveDown(_ sender: UIButton) {
+        let tagOfButtonPressed = sender.tag
+        let tagBelow = tagOfButtonPressed + 1
+        myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagBelow)
+        displayEvents()
+    }
     // checkAnswer()
     
     func checkAnswer() {

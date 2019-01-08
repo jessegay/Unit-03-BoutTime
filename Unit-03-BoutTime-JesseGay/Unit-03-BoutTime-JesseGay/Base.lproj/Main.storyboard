@@ -44,6 +44,9 @@
                                                 </constraints>
                                                 <state key="normal" image="down_full"/>
                                                 <state key="selected" image="down_full_selected"/>
+                                                <connections>
+                                                    <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vx3-US-Plk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -81,6 +84,9 @@
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="EFI-vT-IUC"/>
                                                         </constraints>
                                                         <state key="normal" image="up_half"/>
+                                                        <connections>
+                                                            <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4X-Ki-KN0"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-m2-Tus" userLabel="DownHalfNew">
                                                         <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
@@ -88,6 +94,9 @@
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="rEo-MG-7Vf"/>
                                                         </constraints>
                                                         <state key="normal" image="down_half"/>
+                                                        <connections>
+                                                            <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKF-8H-Rbg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -121,6 +130,9 @@
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="sgn-LS-idZ"/>
                                                         </constraints>
                                                         <state key="normal" image="up_half"/>
+                                                        <connections>
+                                                            <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkO-fV-COE"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faT-11-yQ7" userLabel="DownHalfNew">
                                                         <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
@@ -128,6 +140,9 @@
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="K6f-5M-Ct3"/>
                                                         </constraints>
                                                         <state key="normal" image="down_half"/>
+                                                        <connections>
+                                                            <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g7t-G1-FBs"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
