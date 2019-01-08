@@ -17,6 +17,9 @@ class ViewController: UIViewController {
  
     @IBOutlet var eventLabels: [UILabel]!
     
+    
+    
+    
     @IBOutlet weak var nextRound: UIButton!
     
 
@@ -92,7 +95,9 @@ class ViewController: UIViewController {
             if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
                 // do something
                 myGameManager.correctResponses += 1
-                print("incorrect") // for testing. Delete.
+                print("correct") // for testing. Delete.
+                let successButton = UIImage(named: "next_round_success")
+                nextRound.setImage(successButton, for: .normal)
             } else {
                 // do something else.
                 print("incorrect") // for testing. Delete.
