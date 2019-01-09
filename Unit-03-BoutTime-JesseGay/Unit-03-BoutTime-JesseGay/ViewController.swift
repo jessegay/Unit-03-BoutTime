@@ -18,8 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet var eventLabels: [UILabel]!
     
     
-    
-    
     @IBOutlet weak var nextRound: UIButton!
     
 
@@ -63,9 +61,7 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     
-    // moveUp()
-    
-    // Move up. swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order. Testing by cabling it to bottom up button. Almost works, but events are offset by 1. I.e. first item in array is going to label 1, rather than label 0.
+    // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order. Testing by cabling it to bottom up button. Almost works, but events are offset by 1. I.e. first item in array is going to label 1, rather than label 0.
     @IBAction func moveUp(_ sender: UIButton) {
         let tagOfButtonPressed = sender.tag
         let tagAbove = tagOfButtonPressed - 1
@@ -107,6 +103,8 @@ class ViewController: UIViewController {
             }
             //nextRound.isEnabled = true // Is this needed? Aren't buttons enabled by default?
             nextRound.isHidden = false
+            // Change instructions to "Tap events to learn more"
+            instructions.text = "Tap events to learn more"
             // reset myGameManager.datesThisRound to empty.
             myGameManager.datesThisRound = []
         }
@@ -117,6 +115,15 @@ class ViewController: UIViewController {
          checkAnswer()
         // print("I've been shook") // for testing. Delete.
     }
+    
+    // nextRound() : Call viewDidLoad(). Hide nextRound button.
+    
+    @ IBAction func loadNextRound() {
+        nextRound.isHidden = true // Hide nextRound button
+        viewDidLoad()
+        // First loadNextRound works, but second one causes button to freeze on selected (stays dark) and CPU to go to 100%. Events are not reloaded. Probably forgot to reset something.
+    }
+    
 }
         
         
