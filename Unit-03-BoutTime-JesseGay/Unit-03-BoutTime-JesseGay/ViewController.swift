@@ -87,7 +87,7 @@ class ViewController: UIViewController {
             // Check if they are in order
             if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
                 // do something
-                // FIXME: correctResponses increments by 2 every time I shake (after first time), event when wrong.
+                // FIXME: correctResponses increments by 2 every time I shake (after first time), event when wrong. Only occurs when you shake multiple times without using next round button (aka cheat shakes)
                 myGameManager.correctResponses += 1
                 print("correct") // for testing. Delete.
                 let successButton = UIImage(named: "next_round_success")
@@ -120,25 +120,28 @@ class ViewController: UIViewController {
     //  Call checkAnswer() via Shake.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
          checkAnswer()
+        
+        // End game if all rounds are complete.
+        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
+            // displayScore()
+            print("game over") // for testing, delete
+        } else {
+            // do something else
+        }
     }
     // FIXME: Need to deactivate after first shake, otherwise people could keep shaking on a correct answer and increment their score infinitely.
     
     // nextRound() : Call viewDidLoad(). Hide nextRound button.
     
     @ IBAction func loadNextRound() {
-        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
-            // displayScore()
-            print("game over") // for testing, delete
-        } else {
         nextRound.isHidden = true // Hide nextRound button
         viewDidLoad()
-        }
+        
         // FIXME: Should all the property resets go here instead of in checkAnswer?
     }
     
     // FIXME: Play another game
     // FIXME: Add displayScore()
-    
     
 }
         
