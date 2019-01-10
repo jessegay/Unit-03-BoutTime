@@ -126,8 +126,10 @@ class ViewController: UIViewController {
             // displayScore()
             print("game over") // for testing, delete
         } else {
-            // do something else
+            // do something else (or just return?)
         }
+        // self.view.isUserInteractionEnabled = false // Could this be a clue about deactivating motionEnded until next round?
+        
     }
     // FIXME: Need to deactivate after first shake, otherwise people could keep shaking on a correct answer and increment their score infinitely.
     
