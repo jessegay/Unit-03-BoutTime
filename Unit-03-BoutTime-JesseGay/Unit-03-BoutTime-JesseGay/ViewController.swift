@@ -25,11 +25,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // checking on order of labels. Delete. Hmmm, currently order is wrong.
-        for label in eventLabels {
-            print(label.text!)
-        }
         // Do any additional setup after loading the view, typically from a nib.
+        
         // Create array of 4 random, non-repeating events
         getRandomEvents()
         // Display them on the eventLabels
@@ -90,6 +87,7 @@ class ViewController: UIViewController {
             // Check if they are in order
             if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
                 // do something
+                // FIXME: correctResponses increments by 2 every time I shake (after first time), event when wrong.
                 myGameManager.correctResponses += 1
                 print("correct") // for testing. Delete.
                 let successButton = UIImage(named: "next_round_success")
@@ -105,24 +103,42 @@ class ViewController: UIViewController {
             nextRound.isHidden = false
             // Change instructions to "Tap events to learn more"
             instructions.text = "Tap events to learn more"
-            // reset myGameManager.datesThisRound to empty.
+        
+            // reset myGameManager.alreadyUsedInRound to empty
+            myGameManager.alreadyUsedInRound = []
+            // reset myGameManager.eventsThisRound to empty
+            myGameManager.eventsThisRound = []
+            // reset myGameManager.datesThisRound to empty
             myGameManager.datesThisRound = []
+        
+            // Testing roundsPlayed
+            print("You've played \(myGameManager.roundsPlayed) rounds")
+            print("Your have \(myGameManager.correctResponses) correct responses")
         }
     
     
     //  Call checkAnswer() via Shake.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
          checkAnswer()
-        // print("I've been shook") // for testing. Delete.
     }
+    // FIXME: Need to deactivate after first shake, otherwise people could keep shaking on a correct answer and increment their score infinitely.
     
     // nextRound() : Call viewDidLoad(). Hide nextRound button.
     
     @ IBAction func loadNextRound() {
+        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
+            // displayScore()
+            print("game over") // for testing, delete
+        } else {
         nextRound.isHidden = true // Hide nextRound button
         viewDidLoad()
-        // First loadNextRound works, but second one causes button to freeze on selected (stays dark) and CPU to go to 100%. Events are not reloaded. Probably forgot to reset something.
+        }
+        // FIXME: Should all the property resets go here instead of in checkAnswer?
     }
+    
+    // FIXME: Play another game
+    // FIXME: Add displayScore()
+    
     
 }
         
