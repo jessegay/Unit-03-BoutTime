@@ -86,8 +86,6 @@ class ViewController: UIViewController {
             
             // Check if they are in order
             if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
-                // FIXME: correctResponses increments by 2 every time I shake.
-                // myGameManager.correctResponses += 1 // This is included in isCorrect(). M not V so it should be there not here.
                 print("correct") // for testing. Delete.
                 let successButton = UIImage(named: "next_round_success")
                 nextRound.setImage(successButton, for: .normal)
@@ -122,7 +120,7 @@ class ViewController: UIViewController {
           checkAnswer()
           myGameManager.roundEnded = true
         } else {
-            
+          print("You need to play the next round to re-enable Shake!")
         }
         
         
@@ -136,8 +134,7 @@ class ViewController: UIViewController {
         // self.view.isUserInteractionEnabled = false // Could this be a clue about deactivating motionEnded until next round?
         
     }
-    // FIXME: Need to deactivate after first shake, otherwise people could keep shaking on a correct answer and increment their score infinitely.
-    
+ 
     // nextRound() : Call viewDidLoad(). Hide nextRound button.
     
     @ IBAction func loadNextRound() {
