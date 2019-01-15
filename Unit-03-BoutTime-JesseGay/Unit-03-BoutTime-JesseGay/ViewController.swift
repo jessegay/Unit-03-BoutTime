@@ -86,9 +86,8 @@ class ViewController: UIViewController {
             
             // Check if they are in order
             if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
-                // do something
-                // FIXME: correctResponses increments by 2 every time I shake (after first time), event when wrong. Only occurs when you shake multiple times without using next round button (aka cheat shakes)
-                myGameManager.correctResponses += 1
+                // FIXME: correctResponses increments by 2 every time I shake.
+                // myGameManager.correctResponses += 1 // This is included in isCorrect(). M not V so it should be there not here.
                 print("correct") // for testing. Delete.
                 let successButton = UIImage(named: "next_round_success")
                 nextRound.setImage(successButton, for: .normal)
@@ -113,13 +112,19 @@ class ViewController: UIViewController {
         
             // Testing roundsPlayed
             print("You've played \(myGameManager.roundsPlayed) rounds")
-            print("Your have \(myGameManager.correctResponses) correct responses")
+            print("You have \(myGameManager.correctResponses) correct responses")
         }
     
     
     //  Call checkAnswer() via Shake.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-         checkAnswer()
+        if myGameManager.roundEnded == false {
+          checkAnswer()
+          myGameManager.roundEnded = true
+        } else {
+            
+        }
+        
         
         // End game if all rounds are complete.
         if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
@@ -138,6 +143,7 @@ class ViewController: UIViewController {
     @ IBAction func loadNextRound() {
         nextRound.isHidden = true // Hide nextRound button
         viewDidLoad()
+        myGameManager.roundEnded = false //reset roundEnded so checkAnswer() can run in response to shake.
         
         // FIXME: Should all the property resets go here instead of in checkAnswer?
     }

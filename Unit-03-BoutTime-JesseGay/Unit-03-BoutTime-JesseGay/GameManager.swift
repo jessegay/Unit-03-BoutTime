@@ -19,6 +19,7 @@ class GameManager {
     let eventsPerRound = 4
     var roundsPlayed = 0
     var correctResponses = 0
+    var roundEnded: Bool = false
     var indexOfSelectedEvent = 0 // might need better name
     var alreadyUsedInRound: [Int] = [] // use indices. Redundant?
     var eventsThisRound: [Event] = []
@@ -62,7 +63,7 @@ class GameManager {
     
      func isCorrect(datesThisRound: [Int]) -> Bool {
         if datesThisRound.isSorted() {
-            correctResponses += 1
+            correctResponses += 1 
             return true
             } else {
             return false
