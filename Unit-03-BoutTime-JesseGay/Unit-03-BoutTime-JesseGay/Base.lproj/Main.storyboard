@@ -203,7 +203,7 @@
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
                                 <rect key="frame" x="85" y="557" width="205" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="PB4-ab-3SV"/>
+                                    <constraint firstAttribute="height" constant="50" id="PB4-ab-3SV"/>
                                 </constraints>
                                 <state key="normal" image="next_round_success"/>
                                 <connections>
@@ -211,7 +211,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions-change text for different msgs." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-kC-6Cc" userLabel="Instructions">
-                                <rect key="frame" x="46" y="626" width="283" height="21"/>
+                                <rect key="frame" x="46" y="626" width="283" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -225,7 +225,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLh-ml-2oC" secondAttribute="trailing" constant="85" id="ery-gt-K06"/>
                             <constraint firstAttribute="bottom" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="60" id="qyQ-Tx-510"/>
                             <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="19" id="tfw-5T-P47"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jj-kC-6Cc" secondAttribute="bottom" constant="20" id="u23-6c-QXu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
