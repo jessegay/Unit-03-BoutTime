@@ -17,16 +17,11 @@ class ViewController: UIViewController {
  
     @IBOutlet var eventLabels: [UILabel]!
     
+    
     @IBOutlet weak var nextRound: UIButton!
     
+
     @IBOutlet weak var instructions: UILabel!
-    
-    @IBOutlet weak var timer: UILabel!
-    
-    // Timer
-    var countdownTimer = Timer()
-    var timeForAnswer = 60
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +53,7 @@ class ViewController: UIViewController {
             }
         }
     
-    // FIXME: Complete timer.
-    /* https://teamtreehouse.com/community/swift-countdown-timer-of-60-seconds
-            https://www.youtube.com/watch?v=x5WZD2Ti9KU
-     */
+
         
     
     // MARK: Actions
@@ -154,8 +146,7 @@ class ViewController: UIViewController {
     }
     
     // FIXME: Play another game
-    // FIXME: Add displayScore() modal that includes Play Again button
-    // FIXME: Add :60 timer
+    // FIXME: Add displayScore()
     
 }
         
