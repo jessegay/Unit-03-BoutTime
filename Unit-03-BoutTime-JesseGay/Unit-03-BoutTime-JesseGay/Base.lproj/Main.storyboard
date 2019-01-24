@@ -21,10 +21,10 @@
                                 <rect key="frame" x="37" y="52" width="301" height="424"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="EventTopStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="301" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-HX-lHu">
-                                                <rect key="frame" x="0.0" y="40" width="197.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 0">
                                                         <attributes>
@@ -37,7 +37,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-gV-dDH" userLabel="down_full">
-                                                <rect key="frame" x="197.5" y="0.0" width="103.5" height="100"/>
+                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="height" multiplier="158:457" id="w96-hr-3qg"/>
+                                                </constraints>
                                                 <state key="normal" image="down_full"/>
                                                 <state key="selected" image="down_full_selected"/>
                                                 <state key="highlighted" image="down_full_selected"/>
@@ -47,7 +50,8 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="DdT-HX-lHu" firstAttribute="top" secondItem="uM5-eM-HrC" secondAttribute="top" constant="40" id="TOn-qX-mJO"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="RLl-lK-ZaP"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="wXB-fw-Xqt"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
@@ -57,10 +61,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-8f-LQy" userLabel="EventMiddleTopStackView">
-                                        <rect key="frame" x="0.0" y="108" width="301" height="100"/>
+                                        <rect key="frame" x="0.0" y="108" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Vz-dbp" userLabel="Historical Event 1">
-                                                <rect key="frame" x="0.0" y="40" width="197.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 1">
                                                         <attributes>
@@ -72,12 +76,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-oB-o67" userLabel="UpDownStackNew">
-                                                <rect key="frame" x="197.5" y="0.0" width="103.5" height="100"/>
+                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-hF-6Dz" userLabel="UpHalfNew">
-                                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="7J3-Qq-5Kz"/>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="EFI-vT-IUC"/>
                                                         </constraints>
                                                         <state key="normal" image="up_half"/>
                                                         <state key="selected" image="up_half_selected"/>
@@ -87,7 +91,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-m2-Tus" userLabel="DownHalfNew">
-                                                        <rect key="frame" x="0.0" y="50" width="103.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="rEo-MG-7Vf"/>
+                                                        </constraints>
                                                         <state key="normal" image="down_half"/>
                                                         <state key="selected" image="down_half_selected"/>
                                                         <state key="highlighted" image="down_half_selected"/>
@@ -99,14 +106,15 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="aH9-Vz-dbp" firstAttribute="top" secondItem="5F3-8f-LQy" secondAttribute="top" constant="40" id="SE7-rs-5QR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="KqO-2x-qjL"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="egP-TF-8zY"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="EventMiddleBottomStackView">
-                                        <rect key="frame" x="0.0" y="216" width="301" height="100"/>
+                                        <rect key="frame" x="0.0" y="216" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-N0-odD" userLabel="Historical Event 2">
-                                                <rect key="frame" x="0.0" y="40" width="197.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 2">
                                                         <attributes>
@@ -118,12 +126,12 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-yd-sFN" userLabel="UpDownStackNew">
-                                                <rect key="frame" x="197.5" y="0.0" width="103.5" height="100"/>
+                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-oE-qJi" userLabel="UpHalfNew">
-                                                        <rect key="frame" x="0.0" y="0.0" width="103.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="AOi-oK-9qg"/>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="sgn-LS-idZ"/>
                                                         </constraints>
                                                         <state key="normal" image="up_half"/>
                                                         <state key="selected" image="up_half_selected"/>
@@ -133,7 +141,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faT-11-yQ7" userLabel="DownHalfNew">
-                                                        <rect key="frame" x="0.0" y="50" width="103.5" height="50"/>
+                                                        <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="K6f-5M-Ct3"/>
+                                                        </constraints>
                                                         <state key="normal" image="down_half"/>
                                                         <state key="selected" image="down_half_selected"/>
                                                         <state key="highlighted" image="down_half_selected"/>
@@ -145,14 +156,15 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="1ib-N0-odD" firstAttribute="top" secondItem="LAu-um-Tec" secondAttribute="top" constant="40" id="VGc-a1-ZIY"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="OqX-kH-nzT"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bcd-Y7-SrE"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="EventBottomStackView">
-                                        <rect key="frame" x="0.0" y="324" width="301" height="100"/>
+                                        <rect key="frame" x="0.0" y="324" width="300" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-mA-Sdf" userLabel="Historical Event 3">
-                                                <rect key="frame" x="0.0" y="40" width="197.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="40" width="265.5" height="20.5"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Historical Event 3">
                                                         <attributes>
@@ -164,7 +176,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="3" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-fO-Lkg" userLabel="up_full">
-                                                <rect key="frame" x="197.5" y="0.0" width="103.5" height="100"/>
+                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gJG-fO-Lkg" secondAttribute="height" multiplier="158:457" id="grC-rH-wNt"/>
+                                                </constraints>
                                                 <state key="normal" image="up_full"/>
                                                 <state key="selected" image="up_full_selected"/>
                                                 <state key="highlighted" image="up_full_selected"/>
@@ -174,22 +189,21 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="iva-mA-Sdf" firstAttribute="top" secondItem="2vg-tY-NUr" secondAttribute="top" constant="40" id="MvV-1E-ZQd"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="Te8-Uf-Gt3"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Zug-Qs-keb"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="5F3-8f-LQy" firstAttribute="top" secondItem="t3i-Xm-t2P" secondAttribute="top" constant="108" id="6fk-jd-7PW"/>
-                                    <constraint firstItem="uM5-eM-HrC" firstAttribute="centerX" secondItem="t3i-Xm-t2P" secondAttribute="centerX" id="M65-5i-nE1"/>
-                                    <constraint firstItem="LAu-um-Tec" firstAttribute="trailing" secondItem="2vg-tY-NUr" secondAttribute="trailing" id="dir-x1-iEZ"/>
-                                    <constraint firstItem="LAu-um-Tec" firstAttribute="top" secondItem="t3i-Xm-t2P" secondAttribute="top" constant="216" id="eQh-iF-gAy"/>
-                                    <constraint firstItem="5F3-8f-LQy" firstAttribute="trailing" secondItem="LAu-um-Tec" secondAttribute="trailing" id="j1X-fq-NFa"/>
-                                    <constraint firstItem="uM5-eM-HrC" firstAttribute="trailing" secondItem="5F3-8f-LQy" secondAttribute="trailing" id="rnj-Yf-50I"/>
-                                    <constraint firstItem="2vg-tY-NUr" firstAttribute="top" secondItem="t3i-Xm-t2P" secondAttribute="top" constant="324" id="vEX-md-yTY"/>
+                                    <constraint firstItem="2Oe-yd-sFN" firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="width" id="WMC-2m-gOl"/>
+                                    <constraint firstItem="Epj-oB-o67" firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="width" id="eCR-qW-Rr9"/>
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
                                 <rect key="frame" x="85" y="557" width="205" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="PB4-ab-3SV"/>
+                                </constraints>
                                 <state key="normal" image="next_round_success"/>
                                 <connections>
                                     <action selector="loadNextRound" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6a-AW-bFR"/>
@@ -197,15 +211,16 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions-change text for different msgs." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-kC-6Cc" userLabel="Instructions">
                                 <rect key="frame" x="46" y="626" width="283" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="Bm3-PR-0Hb"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:60" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AW7-VY-8hE">
                                 <rect key="frame" x="125" y="546" width="125" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="BAt-OV-DEZ"/>
+                                    <constraint firstAttribute="height" constant="72" id="dMI-A9-Lrr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -213,26 +228,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="19" id="0Ib-Ns-aKM"/>
-                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="0dt-um-Ye5"/>
-                            <constraint firstItem="cLh-ml-2oC" firstAttribute="centerX" secondItem="3jj-kC-6Cc" secondAttribute="centerX" id="5H9-La-blL"/>
-                            <constraint firstItem="AW7-VY-8hE" firstAttribute="centerX" secondItem="cLh-ml-2oC" secondAttribute="centerX" id="6m4-en-Nf7"/>
-                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="9OE-6V-pIi"/>
-                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JCh-bp-GfI"/>
-                            <constraint firstItem="cLh-ml-2oC" firstAttribute="centerY" secondItem="AW7-VY-8hE" secondAttribute="centerY" id="PDF-a6-nS2"/>
-                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="l9S-wc-Y4j"/>
-                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="centerX" secondItem="cLh-ml-2oC" secondAttribute="centerX" id="qsx-zu-N95"/>
-                            <constraint firstAttribute="bottom" secondItem="3jj-kC-6Cc" secondAttribute="bottom" constant="20" symbolic="YES" id="rv6-gt-pUN"/>
-                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="AW7-VY-8hE" secondAttribute="bottom" constant="8" symbolic="YES" id="uDm-Lp-8Sl"/>
-                            <constraint firstItem="AW7-VY-8hE" firstAttribute="top" secondItem="t3i-Xm-t2P" secondAttribute="bottom" constant="70" id="vaJ-Rt-hsA"/>
-                            <constraint firstItem="cLh-ml-2oC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="woX-6y-QM5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AW7-VY-8hE" secondAttribute="trailing" constant="125" id="ELC-eB-HdQ"/>
+                            <constraint firstItem="cLh-ml-2oC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="ItB-9z-FuQ"/>
+                            <constraint firstItem="AW7-VY-8hE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="MBM-oS-mYa"/>
+                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="centerX" secondItem="cLh-ml-2oC" secondAttribute="centerX" id="WmN-LT-1IW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t3i-Xm-t2P" secondAttribute="trailing" constant="37" id="csQ-lg-a51"/>
+                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jj-kC-6Cc" secondAttribute="trailing" constant="46" id="dmG-nY-VE0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLh-ml-2oC" secondAttribute="trailing" constant="85" id="ery-gt-K06"/>
+                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="AW7-VY-8hE" secondAttribute="bottom" constant="8" id="pUc-m7-1AC"/>
+                            <constraint firstItem="AW7-VY-8hE" firstAttribute="top" secondItem="t3i-Xm-t2P" secondAttribute="bottom" constant="70" id="qP4-eu-9dX"/>
+                            <constraint firstAttribute="bottom" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="60" id="qyQ-Tx-510"/>
+                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="19" id="tfw-5T-P47"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3jj-kC-6Cc" secondAttribute="bottom" constant="20" id="u23-6c-QXu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="countdownTimer" destination="AW7-VY-8hE" id="9sL-XA-Nf4"/>
                         <outlet property="instructions" destination="3jj-kC-6Cc" id="aTV-d6-Inq"/>
                         <outlet property="nextRound" destination="cLh-ml-2oC" id="MZt-NP-XyG"/>
-                        <outlet property="timer" destination="AW7-VY-8hE" id="JNy-Ls-pzz"/>
                         <outletCollection property="eventLabels" destination="DdT-HX-lHu" collectionClass="NSMutableArray" id="zwY-pP-HOS"/>
                         <outletCollection property="eventLabels" destination="aH9-Vz-dbp" collectionClass="NSMutableArray" id="1en-eq-CJN"/>
                         <outletCollection property="eventLabels" destination="1ib-N0-odD" collectionClass="NSMutableArray" id="coU-pt-vy6"/>
