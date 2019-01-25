@@ -201,9 +201,10 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
-                                <rect key="frame" x="85" y="557" width="205" height="50"/>
+                                <rect key="frame" x="87.5" y="557" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="PB4-ab-3SV"/>
+                                    <constraint firstAttribute="width" constant="200" id="qBF-AD-l6j"/>
                                 </constraints>
                                 <state key="normal" image="next_round_success"/>
                                 <connections>
@@ -219,10 +220,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cLh-ml-2oC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="ItB-9z-FuQ"/>
+                            <constraint firstItem="cLh-ml-2oC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Yi-r4-WEO"/>
                             <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jj-kC-6Cc" secondAttribute="trailing" constant="46" id="dmG-nY-VE0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cLh-ml-2oC" secondAttribute="trailing" constant="85" id="ery-gt-K06"/>
                             <constraint firstAttribute="bottom" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="60" id="qyQ-Tx-510"/>
                             <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="19" id="tfw-5T-P47"/>
                         </constraints>
