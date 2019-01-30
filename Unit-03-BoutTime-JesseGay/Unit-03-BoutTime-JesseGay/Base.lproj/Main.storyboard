@@ -19,7 +19,7 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-Xm-t2P">
                                 <rect key="frame" x="38" y="55" width="300" height="424"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="EventTopStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
@@ -76,7 +76,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-oB-o67" userLabel="UpDownStackNew">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-oB-o67" userLabel="UpDownStackTop">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-hF-6Dz" userLabel="UpHalfNew">
@@ -107,8 +107,11 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Epj-oB-o67" firstAttribute="top" secondItem="5F3-8f-LQy" secondAttribute="top" id="5zO-Hn-yjL"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="KqO-2x-qjL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Epj-oB-o67" secondAttribute="trailing" id="X8w-L5-cul"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="egP-TF-8zY"/>
+                                            <constraint firstAttribute="bottom" secondItem="Epj-oB-o67" secondAttribute="bottom" id="jvR-dI-QA0"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="EventMiddleBottomStackView">
@@ -126,7 +129,7 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-yd-sFN" userLabel="UpDownStackNew">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-yd-sFN" userLabel="UpDownStackBottom">
                                                 <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-oE-qJi" userLabel="UpHalfNew">
@@ -159,6 +162,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="OqX-kH-nzT"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bcd-Y7-SrE"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Oe-yd-sFN" secondAttribute="trailing" id="hrS-N2-1b1"/>
+                                            <constraint firstItem="2Oe-yd-sFN" firstAttribute="top" secondItem="LAu-um-Tec" secondAttribute="top" id="mNI-N6-ayc"/>
+                                            <constraint firstAttribute="bottom" secondItem="2Oe-yd-sFN" secondAttribute="bottom" id="xQh-z6-5Qx"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="EventBottomStackView">
