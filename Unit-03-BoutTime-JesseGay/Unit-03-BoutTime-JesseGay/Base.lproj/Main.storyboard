@@ -51,7 +51,10 @@
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Yy8-gV-dDH" secondAttribute="bottom" id="NsI-Qt-X0l"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="RLl-lK-ZaP"/>
+                                            <constraint firstItem="Yy8-gV-dDH" firstAttribute="top" secondItem="uM5-eM-HrC" secondAttribute="top" id="hmS-Ig-Si8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Yy8-gV-dDH" secondAttribute="trailing" id="kSZ-Pb-019"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="wXB-fw-Xqt"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -196,8 +199,11 @@
                                             </button>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="gJG-fO-Lkg" secondAttribute="trailing" id="R4Z-bm-6vm"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="Te8-Uf-Gt3"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Zug-Qs-keb"/>
+                                            <constraint firstItem="gJG-fO-Lkg" firstAttribute="top" secondItem="2vg-tY-NUr" secondAttribute="top" id="ulm-oD-ypk"/>
+                                            <constraint firstAttribute="bottom" secondItem="gJG-fO-Lkg" secondAttribute="bottom" id="xH9-m4-6am"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
