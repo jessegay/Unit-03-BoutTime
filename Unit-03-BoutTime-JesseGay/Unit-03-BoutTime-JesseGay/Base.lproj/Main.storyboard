@@ -17,9 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-Xm-t2P">
-                                <rect key="frame" x="38" y="55" width="300" height="424"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-Xm-t2P" userLabel="AllEventsStackView">
+                                <rect key="frame" x="37" y="70" width="300" height="424"/>
                                 <subviews>
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="EventTopStackView">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
@@ -233,6 +232,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cLh-ml-2oC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Yi-r4-WEO"/>
+                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="8lJ-lV-JU8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t3i-Xm-t2P" secondAttribute="trailing" constant="38" id="B5X-I1-Gvh"/>
+                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="KH5-LF-aDe"/>
+                            <constraint firstItem="cLh-ml-2oC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="t3i-Xm-t2P" secondAttribute="bottom" constant="50" id="UTu-e3-ADD"/>
                             <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jj-kC-6Cc" secondAttribute="trailing" constant="46" id="dmG-nY-VE0"/>
                             <constraint firstAttribute="bottom" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="60" id="qyQ-Tx-510"/>
