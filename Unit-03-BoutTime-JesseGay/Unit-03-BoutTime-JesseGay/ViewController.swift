@@ -128,6 +128,7 @@ class ViewController: UIViewController {
         if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
             // displayScore()
             print("game over") // for testing, delete
+            nextRound.isHidden = true // Hide button so they can't keep playing. Eventually this will trigger the FinalScore view so this may be redundant. Circle back once FinalScore is in place.
         } else {
             // do something else (or just return?)
         }
