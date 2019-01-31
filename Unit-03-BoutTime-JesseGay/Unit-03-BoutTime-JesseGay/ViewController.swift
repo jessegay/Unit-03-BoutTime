@@ -34,7 +34,10 @@ class ViewController: UIViewController {
         instructions.text = "Shake to complete"
         nextRound.isHidden = true
         
-        
+        // FIXME: Set background color of labels. Doesn't address the other space in the stack view. 
+        for label in eventLabels {
+            label.backgroundColor = UIColor.white
+        }
         
         }
     
