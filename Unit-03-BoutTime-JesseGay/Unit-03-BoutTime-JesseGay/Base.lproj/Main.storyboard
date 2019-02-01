@@ -41,22 +41,22 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uii-qx-auK" userLabel="AllEventsStack">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uii-qx-auK" userLabel="AllEventsStack">
                                 <rect key="frame" x="27" y="20" width="320" height="504"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dsr-mG-yVv" userLabel="Event 0 View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsr-mG-yVv" userLabel="Event 0 View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbK-l9-KPq" userLabel="Label 0">
-                                                <rect key="frame" x="24" y="48" width="66" height="24"/>
+                                                <rect key="frame" x="24" y="48" width="226" height="24"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPx-6a-n6Q">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPx-6a-n6Q">
                                                 <rect key="frame" x="280" y="0.0" width="40" height="120"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="C0J-HW-XBx"/>
+                                                    <constraint firstAttribute="width" constant="40" id="C0J-HW-XBx"/>
                                                 </constraints>
                                                 <state key="normal" title="DownFullButton" image="down_full"/>
                                             </button>
@@ -70,28 +70,29 @@
                                             <constraint firstItem="IbK-l9-KPq" firstAttribute="leading" secondItem="dsr-mG-yVv" secondAttribute="leading" constant="24" id="daD-86-Bcx"/>
                                             <constraint firstAttribute="bottom" secondItem="uPx-6a-n6Q" secondAttribute="bottom" id="lWb-Aw-JHe"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="nW8-AM-ZLi"/>
+                                            <constraint firstItem="uPx-6a-n6Q" firstAttribute="leading" secondItem="IbK-l9-KPq" secondAttribute="trailing" constant="30" id="ouf-sR-wK1"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="38o-Si-UiR" userLabel="Event 1 View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38o-Si-UiR" userLabel="Event 1 View">
                                         <rect key="frame" x="0.0" y="128" width="320" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-CZ-QS4" userLabel="Label 1">
-                                                <rect key="frame" x="24" y="48" width="63" height="24"/>
+                                                <rect key="frame" x="24" y="48" width="226" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50U-GF-1fg" userLabel="UpHalfButton 0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50U-GF-1fg" userLabel="UpHalfButton 0">
                                                 <rect key="frame" x="280" y="0.0" width="40" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="wV3-ny-5em"/>
+                                                    <constraint firstAttribute="width" constant="40" id="wV3-ny-5em"/>
                                                 </constraints>
                                                 <state key="normal" title="UpHalfButton0" image="up_half"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-T6-xN2" userLabel="DownHalfButton 0">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j3M-T6-xN2" userLabel="DownHalfButton 0">
                                                 <rect key="frame" x="280" y="60" width="40" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="l3P-5y-AKL"/>
+                                                    <constraint firstAttribute="width" constant="40" id="l3P-5y-AKL"/>
                                                 </constraints>
                                                 <state key="normal" title="DownHalfButton0" image="down_half"/>
                                             </button>
@@ -104,31 +105,32 @@
                                             <constraint firstItem="ErL-CZ-QS4" firstAttribute="leading" secondItem="38o-Si-UiR" secondAttribute="leading" constant="24" id="LUY-Zx-48O"/>
                                             <constraint firstAttribute="bottom" secondItem="j3M-T6-xN2" secondAttribute="bottom" id="MHw-iB-cWY"/>
                                             <constraint firstItem="ErL-CZ-QS4" firstAttribute="centerY" secondItem="38o-Si-UiR" secondAttribute="centerY" id="Ndd-Bw-5Hw"/>
+                                            <constraint firstItem="50U-GF-1fg" firstAttribute="leading" secondItem="ErL-CZ-QS4" secondAttribute="trailing" constant="30" id="W6f-a8-DOp"/>
                                             <constraint firstAttribute="trailing" secondItem="j3M-T6-xN2" secondAttribute="trailing" id="kcJ-8g-Uom"/>
                                             <constraint firstItem="50U-GF-1fg" firstAttribute="top" secondItem="38o-Si-UiR" secondAttribute="top" id="qiV-KR-wGF"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="tMa-Xp-IkT"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GKU-cB-a4F" userLabel="Event 2 View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKU-cB-a4F" userLabel="Event 2 View">
                                         <rect key="frame" x="0.0" y="256" width="320" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrp-yV-ZGh" userLabel="Label 2">
-                                                <rect key="frame" x="24" y="48" width="65.5" height="24"/>
+                                                <rect key="frame" x="24" y="48" width="226" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p47-JC-FUd" userLabel="UpHalfButton 1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p47-JC-FUd" userLabel="UpHalfButton 1">
                                                 <rect key="frame" x="280" y="0.0" width="40" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="fwG-gm-Ikj"/>
+                                                    <constraint firstAttribute="width" constant="40" id="fwG-gm-Ikj"/>
                                                 </constraints>
                                                 <state key="normal" title="UpHalfButton0" image="up_half"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUB-TY-28w" userLabel="DownHalfButton 1">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUB-TY-28w" userLabel="DownHalfButton 1">
                                                 <rect key="frame" x="280" y="60" width="40" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="MEW-Cg-n0k"/>
+                                                    <constraint firstAttribute="width" constant="40" id="MEW-Cg-n0k"/>
                                                 </constraints>
                                                 <state key="normal" title="DownHalfButton0" image="down_half"/>
                                             </button>
@@ -144,21 +146,22 @@
                                             <constraint firstAttribute="bottom" secondItem="hUB-TY-28w" secondAttribute="bottom" id="mAP-fE-Lqw"/>
                                             <constraint firstItem="p47-JC-FUd" firstAttribute="top" secondItem="GKU-cB-a4F" secondAttribute="top" id="nCC-gI-a6o"/>
                                             <constraint firstItem="Qrp-yV-ZGh" firstAttribute="centerY" secondItem="GKU-cB-a4F" secondAttribute="centerY" id="pSF-M0-QAQ"/>
+                                            <constraint firstItem="p47-JC-FUd" firstAttribute="leading" secondItem="Qrp-yV-ZGh" secondAttribute="trailing" constant="30" id="wMf-el-FIY"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFY-hY-Ann" userLabel="Event 3 View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFY-hY-Ann" userLabel="Event 3 View">
                                         <rect key="frame" x="0.0" y="384" width="320" height="120"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 3" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVt-tB-mrG" userLabel="Label 3">
-                                                <rect key="frame" x="24" y="48" width="66" height="24"/>
+                                                <rect key="frame" x="24" y="48" width="226" height="24"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPI-Xp-ktt">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TPI-Xp-ktt">
                                                 <rect key="frame" x="280" y="0.0" width="40" height="120"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="NnN-cR-WiF"/>
+                                                    <constraint firstAttribute="width" constant="40" id="NnN-cR-WiF"/>
                                                 </constraints>
                                                 <state key="normal" title="UpFullButton" image="up_full"/>
                                             </button>
@@ -168,6 +171,7 @@
                                             <constraint firstItem="mVt-tB-mrG" firstAttribute="centerY" secondItem="QFY-hY-Ann" secondAttribute="centerY" id="6IJ-ql-Zm1"/>
                                             <constraint firstItem="TPI-Xp-ktt" firstAttribute="centerY" secondItem="QFY-hY-Ann" secondAttribute="centerY" id="FWT-CS-AmL"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="MZV-Cf-H5Z"/>
+                                            <constraint firstItem="TPI-Xp-ktt" firstAttribute="leading" secondItem="mVt-tB-mrG" secondAttribute="trailing" constant="30" id="P05-qz-9UV"/>
                                             <constraint firstItem="mVt-tB-mrG" firstAttribute="leading" secondItem="QFY-hY-Ann" secondAttribute="leading" constant="24" id="RS5-uV-81i"/>
                                             <constraint firstItem="TPI-Xp-ktt" firstAttribute="top" secondItem="QFY-hY-Ann" secondAttribute="top" id="RgU-6w-O64"/>
                                             <constraint firstAttribute="bottom" secondItem="TPI-Xp-ktt" secondAttribute="bottom" id="b22-HL-L4c"/>
@@ -179,8 +183,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uii-qx-auK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3c1-kL-6zy"/>
                             <constraint firstItem="cLh-ml-2oC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Yi-r4-WEO"/>
-                            <constraint firstItem="uii-qx-auK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zva-0z-HUZ"/>
+                            <constraint firstItem="uii-qx-auK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="Dg7-lr-2fn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uii-qx-auK" secondAttribute="trailing" constant="28" id="Lm7-yb-LeP"/>
                             <constraint firstItem="cLh-ml-2oC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uii-qx-auK" secondAttribute="bottom" constant="33" id="c0S-4t-tVU"/>
                             <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jj-kC-6Cc" secondAttribute="trailing" constant="46" id="dmG-nY-VE0"/>
