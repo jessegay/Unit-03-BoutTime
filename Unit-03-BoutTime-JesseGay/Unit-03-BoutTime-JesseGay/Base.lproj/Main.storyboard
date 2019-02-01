@@ -17,204 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-Xm-t2P" userLabel="AllEventsStackView">
-                                <rect key="frame" x="37" y="83" width="300" height="424"/>
-                                <subviews>
-                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uM5-eM-HrC" userLabel="EventTopStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="100"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdT-HX-lHu">
-                                                <rect key="frame" x="0.0" y="37" width="265.5" height="26.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 0">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.090196078430000007" green="0.37647058820000001" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="22" name=".AppleSystemUIFont"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-gV-dDH" userLabel="down_full">
-                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="height" multiplier="158:457" id="w96-hr-3qg"/>
-                                                </constraints>
-                                                <state key="normal" image="down_full"/>
-                                                <state key="selected" image="down_full_selected"/>
-                                                <state key="highlighted" image="down_full_selected"/>
-                                                <connections>
-                                                    <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vx3-US-Plk"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="Yy8-gV-dDH" secondAttribute="bottom" id="NsI-Qt-X0l"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="RLl-lK-ZaP"/>
-                                            <constraint firstItem="Yy8-gV-dDH" firstAttribute="top" secondItem="uM5-eM-HrC" secondAttribute="top" id="hmS-Ig-Si8"/>
-                                            <constraint firstAttribute="trailing" secondItem="Yy8-gV-dDH" secondAttribute="trailing" id="kSZ-Pb-019"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="wXB-fw-Xqt"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5F3-8f-LQy" userLabel="EventMiddleTopStackView">
-                                        <rect key="frame" x="0.0" y="108" width="300" height="100"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aH9-Vz-dbp" userLabel="Historical Event 1">
-                                                <rect key="frame" x="0.0" y="37" width="265.5" height="26.5"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 1">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.090196078430000007" green="0.37647058820000001" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="22" name=".AppleSystemUIFont"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Epj-oB-o67" userLabel="UpDownStackTop">
-                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkn-hF-6Dz" userLabel="UpHalfNew">
-                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="EFI-vT-IUC"/>
-                                                        </constraints>
-                                                        <state key="normal" image="up_half"/>
-                                                        <state key="selected" image="up_half_selected"/>
-                                                        <state key="highlighted" image="up_half_selected"/>
-                                                        <connections>
-                                                            <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s4X-Ki-KN0"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORI-m2-Tus" userLabel="DownHalfNew">
-                                                        <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="rEo-MG-7Vf"/>
-                                                        </constraints>
-                                                        <state key="normal" image="down_half"/>
-                                                        <state key="selected" image="down_half_selected"/>
-                                                        <state key="highlighted" image="down_half_selected"/>
-                                                        <connections>
-                                                            <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKF-8H-Rbg"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Epj-oB-o67" firstAttribute="top" secondItem="5F3-8f-LQy" secondAttribute="top" id="5zO-Hn-yjL"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="KqO-2x-qjL"/>
-                                            <constraint firstAttribute="trailing" secondItem="Epj-oB-o67" secondAttribute="trailing" id="X8w-L5-cul"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="egP-TF-8zY"/>
-                                            <constraint firstAttribute="bottom" secondItem="Epj-oB-o67" secondAttribute="bottom" id="jvR-dI-QA0"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LAu-um-Tec" userLabel="EventMiddleBottomStackView">
-                                        <rect key="frame" x="0.0" y="216" width="300" height="100"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ib-N0-odD" userLabel="Historical Event 2">
-                                                <rect key="frame" x="0.0" y="37" width="265.5" height="26"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 2">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.090196078430000007" green="0.37647058820000001" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="22" name=".SFNSDisplay"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-yd-sFN" userLabel="UpDownStackBottom">
-                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
-                                                <subviews>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5G-oE-qJi" userLabel="UpHalfNew">
-                                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="sgn-LS-idZ"/>
-                                                        </constraints>
-                                                        <state key="normal" image="up_half"/>
-                                                        <state key="selected" image="up_half_selected"/>
-                                                        <state key="highlighted" image="up_half_selected"/>
-                                                        <connections>
-                                                            <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fkO-fV-COE"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faT-11-yQ7" userLabel="DownHalfNew">
-                                                        <rect key="frame" x="0.0" y="50" width="34.5" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="K6f-5M-Ct3"/>
-                                                        </constraints>
-                                                        <state key="normal" image="down_half"/>
-                                                        <state key="selected" image="down_half_selected"/>
-                                                        <state key="highlighted" image="down_half_selected"/>
-                                                        <connections>
-                                                            <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g7t-G1-FBs"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="OqX-kH-nzT"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="bcd-Y7-SrE"/>
-                                            <constraint firstAttribute="trailing" secondItem="2Oe-yd-sFN" secondAttribute="trailing" id="hrS-N2-1b1"/>
-                                            <constraint firstItem="2Oe-yd-sFN" firstAttribute="top" secondItem="LAu-um-Tec" secondAttribute="top" id="mNI-N6-ayc"/>
-                                            <constraint firstAttribute="bottom" secondItem="2Oe-yd-sFN" secondAttribute="bottom" id="xQh-z6-5Qx"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2vg-tY-NUr" userLabel="EventBottomStackView">
-                                        <rect key="frame" x="0.0" y="324" width="300" height="100"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iva-mA-Sdf" userLabel="Historical Event 3">
-                                                <rect key="frame" x="0.0" y="37" width="265.5" height="26.5"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Historical Event 3">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.090196078430000007" green="0.37647058820000001" blue="0.49019607840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <font key="NSFont" size="22" name=".AppleSystemUIFont"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" tag="3" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJG-fO-Lkg" userLabel="up_full">
-                                                <rect key="frame" x="265.5" y="0.0" width="34.5" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="gJG-fO-Lkg" secondAttribute="height" multiplier="158:457" id="grC-rH-wNt"/>
-                                                </constraints>
-                                                <state key="normal" image="up_full"/>
-                                                <state key="selected" image="up_full_selected"/>
-                                                <state key="highlighted" image="up_full_selected"/>
-                                                <connections>
-                                                    <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BR7-Mw-HVE"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="gJG-fO-Lkg" secondAttribute="trailing" id="R4Z-bm-6vm"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="Te8-Uf-Gt3"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="Zug-Qs-keb"/>
-                                            <constraint firstItem="gJG-fO-Lkg" firstAttribute="top" secondItem="2vg-tY-NUr" secondAttribute="top" id="ulm-oD-ypk"/>
-                                            <constraint firstAttribute="bottom" secondItem="gJG-fO-Lkg" secondAttribute="bottom" id="xH9-m4-6am"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="2Oe-yd-sFN" firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="width" id="WMC-2m-gOl"/>
-                                    <constraint firstItem="Epj-oB-o67" firstAttribute="width" secondItem="Yy8-gV-dDH" secondAttribute="width" id="eCR-qW-Rr9"/>
-                                </constraints>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
                                 <rect key="frame" x="87.5" y="557" width="200" height="50"/>
                                 <constraints>
@@ -243,10 +45,6 @@
                         <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cLh-ml-2oC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Yi-r4-WEO"/>
-                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="8lJ-lV-JU8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t3i-Xm-t2P" secondAttribute="trailing" constant="38" id="B5X-I1-Gvh"/>
-                            <constraint firstItem="t3i-Xm-t2P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="KH5-LF-aDe"/>
-                            <constraint firstItem="cLh-ml-2oC" firstAttribute="top" secondItem="t3i-Xm-t2P" secondAttribute="bottom" constant="50" id="UTu-e3-ADD"/>
                             <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jj-kC-6Cc" secondAttribute="trailing" constant="46" id="dmG-nY-VE0"/>
                             <constraint firstAttribute="bottom" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="60" id="qyQ-Tx-510"/>
@@ -257,10 +55,6 @@
                     <connections>
                         <outlet property="instructions" destination="3jj-kC-6Cc" id="aTV-d6-Inq"/>
                         <outlet property="nextRound" destination="cLh-ml-2oC" id="MZt-NP-XyG"/>
-                        <outletCollection property="eventLabels" destination="DdT-HX-lHu" collectionClass="NSMutableArray" id="zwY-pP-HOS"/>
-                        <outletCollection property="eventLabels" destination="aH9-Vz-dbp" collectionClass="NSMutableArray" id="1en-eq-CJN"/>
-                        <outletCollection property="eventLabels" destination="1ib-N0-odD" collectionClass="NSMutableArray" id="coU-pt-vy6"/>
-                        <outletCollection property="eventLabels" destination="iva-mA-Sdf" collectionClass="NSMutableArray" id="0L3-Vc-avQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -269,14 +63,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="down_full" width="158" height="457"/>
-        <image name="down_full_selected" width="158" height="457"/>
-        <image name="down_half" width="158" height="229"/>
-        <image name="down_half_selected" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
-        <image name="up_full" width="158" height="457"/>
-        <image name="up_full_selected" width="158" height="457"/>
-        <image name="up_half" width="158" height="229"/>
-        <image name="up_half_selected" width="158" height="229"/>
     </resources>
 </document>
