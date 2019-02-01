@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var myGameManager = GameManager()
     // MARK: - Outlets.  Use @IBOutlet collection instead of individual @IBOutlets for every label
  
+    // FIXME: Connect historical labels to this outlet in order
     @IBOutlet var eventLabels: [UILabel]!
     
     
@@ -62,6 +63,9 @@ class ViewController: UIViewController {
     // MARK: Actions
     
     // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order. Testing by cabling it to bottom up button. Almost works, but events are offset by 1. I.e. first item in array is going to label 1, rather than label 0.
+    
+    // FIXME: Connect all up buttons to moveUp, and down buttons to moveDown
+    
     @IBAction func moveUp(_ sender: UIButton) {
         let tagOfButtonPressed = sender.tag
         let tagAbove = tagOfButtonPressed - 1
