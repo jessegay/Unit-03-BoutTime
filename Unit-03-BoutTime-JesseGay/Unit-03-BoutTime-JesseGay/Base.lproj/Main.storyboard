@@ -81,7 +81,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38o-Si-UiR" userLabel="Event 1 View">
                                         <rect key="frame" x="0.0" y="128" width="320" height="120"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-CZ-QS4" userLabel="Label 1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 1" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErL-CZ-QS4" userLabel="Label 1">
                                                 <rect key="frame" x="24" y="48" width="226" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,7 +118,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKU-cB-a4F" userLabel="Event 2 View">
                                         <rect key="frame" x="0.0" y="256" width="320" height="120"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrp-yV-ZGh" userLabel="Label 2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event 2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qrp-yV-ZGh" userLabel="Label 2">
                                                 <rect key="frame" x="24" y="48" width="226" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <color key="textColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -199,6 +199,9 @@
                         <outlet property="instructions" destination="3jj-kC-6Cc" id="aTV-d6-Inq"/>
                         <outlet property="nextRound" destination="cLh-ml-2oC" id="MZt-NP-XyG"/>
                         <outletCollection property="eventLabels" destination="IbK-l9-KPq" collectionClass="NSMutableArray" id="yY9-n4-gmU"/>
+                        <outletCollection property="eventLabels" destination="ErL-CZ-QS4" collectionClass="NSMutableArray" id="YaE-CJ-Lix"/>
+                        <outletCollection property="eventLabels" destination="Qrp-yV-ZGh" collectionClass="NSMutableArray" id="s9X-MG-bSx"/>
+                        <outletCollection property="eventLabels" destination="mVt-tB-mrG" collectionClass="NSMutableArray" id="CbK-pX-GtH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
