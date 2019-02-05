@@ -220,6 +220,10 @@
                         <outletCollection property="eventLabels" destination="ErL-CZ-QS4" collectionClass="NSMutableArray" id="YaE-CJ-Lix"/>
                         <outletCollection property="eventLabels" destination="Qrp-yV-ZGh" collectionClass="NSMutableArray" id="s9X-MG-bSx"/>
                         <outletCollection property="eventLabels" destination="mVt-tB-mrG" collectionClass="NSMutableArray" id="CbK-pX-GtH"/>
+                        <outletCollection property="eventViews" destination="dsr-mG-yVv" collectionClass="NSMutableArray" id="aPA-AS-jqF"/>
+                        <outletCollection property="eventViews" destination="38o-Si-UiR" collectionClass="NSMutableArray" id="xdO-Fa-sA4"/>
+                        <outletCollection property="eventViews" destination="GKU-cB-a4F" collectionClass="NSMutableArray" id="yww-F4-x04"/>
+                        <outletCollection property="eventViews" destination="QFY-hY-Ann" collectionClass="NSMutableArray" id="A2M-pw-L78"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
