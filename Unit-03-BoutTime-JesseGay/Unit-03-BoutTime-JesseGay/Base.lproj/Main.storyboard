@@ -17,32 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
-                                <rect key="frame" x="87.5" y="557" width="200" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="PB4-ab-3SV"/>
-                                    <constraint firstAttribute="width" constant="200" id="qBF-AD-l6j"/>
-                                </constraints>
-                                <state key="normal" image="next_round_success"/>
-                                <connections>
-                                    <action selector="loadNextRound" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6a-AW-bFR"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-kC-6Cc" userLabel="Instructions">
-                                <rect key="frame" x="46" y="626" width="283" height="24"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Instructions-change text for different msgs.">
-                                        <attributes>
-                                            <color key="NSColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uii-qx-auK" userLabel="AllEventsStack">
-                                <rect key="frame" x="27" y="20" width="320" height="504"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-MJ-9uH">
+                                <rect key="frame" x="20" y="544" width="335" height="113"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
+                                        <rect key="frame" x="63.5" y="0.0" width="208" height="51.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cLh-ml-2oC" secondAttribute="height" multiplier="335:83" id="MR2-ID-KgP"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="NLp-zQ-zJT"/>
+                                        </constraints>
+                                        <state key="normal" image="next_round_success"/>
+                                        <connections>
+                                            <action selector="loadNextRound" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6a-AW-bFR"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jj-kC-6Cc" userLabel="Instructions">
+                                        <rect key="frame" x="45" y="61.5" width="245.5" height="51.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Instructions-change text for different msgs.">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.21960784310000001" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uii-qx-auK" userLabel="AllEventsStack">
+                                <rect key="frame" x="27" y="30" width="320" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsr-mG-yVv" userLabel="Event 0 View">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
@@ -57,6 +62,7 @@
                                                 <rect key="frame" x="280" y="0.0" width="40" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="C0J-HW-XBx"/>
+                                                    <constraint firstAttribute="height" constant="120" id="WEe-yM-ONu"/>
                                                 </constraints>
                                                 <state key="normal" title="DownFullButton" image="down_full"/>
                                             </button>
@@ -69,7 +75,6 @@
                                             <constraint firstItem="uPx-6a-n6Q" firstAttribute="top" secondItem="dsr-mG-yVv" secondAttribute="top" id="QuB-ST-TZy"/>
                                             <constraint firstItem="IbK-l9-KPq" firstAttribute="leading" secondItem="dsr-mG-yVv" secondAttribute="leading" constant="24" id="daD-86-Bcx"/>
                                             <constraint firstAttribute="bottom" secondItem="uPx-6a-n6Q" secondAttribute="bottom" id="lWb-Aw-JHe"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="nW8-AM-ZLi"/>
                                             <constraint firstItem="uPx-6a-n6Q" firstAttribute="leading" secondItem="IbK-l9-KPq" secondAttribute="trailing" constant="30" id="ouf-sR-wK1"/>
                                         </constraints>
                                     </view>
@@ -108,7 +113,6 @@
                                             <constraint firstItem="50U-GF-1fg" firstAttribute="leading" secondItem="ErL-CZ-QS4" secondAttribute="trailing" constant="30" id="W6f-a8-DOp"/>
                                             <constraint firstAttribute="trailing" secondItem="j3M-T6-xN2" secondAttribute="trailing" id="kcJ-8g-Uom"/>
                                             <constraint firstItem="50U-GF-1fg" firstAttribute="top" secondItem="38o-Si-UiR" secondAttribute="top" id="qiV-KR-wGF"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="tMa-Xp-IkT"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKU-cB-a4F" userLabel="Event 2 View">
@@ -139,7 +143,6 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="p47-JC-FUd" secondAttribute="trailing" id="0hb-i4-DDR"/>
                                             <constraint firstItem="hUB-TY-28w" firstAttribute="top" secondItem="p47-JC-FUd" secondAttribute="bottom" id="Bmd-7H-xRh"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="Mdu-67-Xix"/>
                                             <constraint firstAttribute="trailing" secondItem="hUB-TY-28w" secondAttribute="trailing" id="ciw-Ki-SDB"/>
                                             <constraint firstItem="hUB-TY-28w" firstAttribute="height" secondItem="p47-JC-FUd" secondAttribute="height" id="e9I-fv-eW6"/>
                                             <constraint firstItem="Qrp-yV-ZGh" firstAttribute="leading" secondItem="GKU-cB-a4F" secondAttribute="leading" constant="24" id="gOl-1e-Ubt"/>
@@ -170,7 +173,6 @@
                                         <constraints>
                                             <constraint firstItem="mVt-tB-mrG" firstAttribute="centerY" secondItem="QFY-hY-Ann" secondAttribute="centerY" id="6IJ-ql-Zm1"/>
                                             <constraint firstItem="TPI-Xp-ktt" firstAttribute="centerY" secondItem="QFY-hY-Ann" secondAttribute="centerY" id="FWT-CS-AmL"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="120" id="MZV-Cf-H5Z"/>
                                             <constraint firstItem="TPI-Xp-ktt" firstAttribute="leading" secondItem="mVt-tB-mrG" secondAttribute="trailing" constant="30" id="P05-qz-9UV"/>
                                             <constraint firstItem="mVt-tB-mrG" firstAttribute="leading" secondItem="QFY-hY-Ann" secondAttribute="leading" constant="24" id="RS5-uV-81i"/>
                                             <constraint firstItem="TPI-Xp-ktt" firstAttribute="top" secondItem="QFY-hY-Ann" secondAttribute="top" id="RgU-6w-O64"/>
@@ -183,16 +185,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="uii-qx-auK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3c1-kL-6zy"/>
-                            <constraint firstItem="cLh-ml-2oC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Yi-r4-WEO"/>
+                            <constraint firstItem="uii-qx-auK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3c1-kL-6zy"/>
                             <constraint firstItem="uii-qx-auK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="Dg7-lr-2fn"/>
+                            <constraint firstAttribute="trailing" secondItem="0fG-MJ-9uH" secondAttribute="trailing" constant="20" id="IqK-Oq-qHU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uii-qx-auK" secondAttribute="trailing" constant="28" id="Lm7-yb-LeP"/>
-                            <constraint firstItem="cLh-ml-2oC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uii-qx-auK" secondAttribute="bottom" constant="33" id="c0S-4t-tVU"/>
-                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="dah-2o-lqX"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3jj-kC-6Cc" secondAttribute="trailing" constant="46" id="dmG-nY-VE0"/>
-                            <constraint firstItem="uii-qx-auK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p6v-VN-kqY"/>
-                            <constraint firstAttribute="bottom" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="60" id="qyQ-Tx-510"/>
-                            <constraint firstItem="3jj-kC-6Cc" firstAttribute="top" secondItem="cLh-ml-2oC" secondAttribute="bottom" constant="19" id="tfw-5T-P47"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fG-MJ-9uH" secondAttribute="bottom" constant="10" id="Oth-Hf-OMu"/>
+                            <constraint firstItem="0fG-MJ-9uH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UbK-hX-mvE"/>
+                            <constraint firstItem="0fG-MJ-9uH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uii-qx-auK" secondAttribute="bottom" constant="10" id="kx0-x0-EnS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
