@@ -17,7 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-MJ-9uH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":60" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKc-86-oyB" userLabel="Label Countdown">
+                                <rect key="frame" x="146" y="536" width="83" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="56"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0fG-MJ-9uH" userLabel="Messages Stack">
                                 <rect key="frame" x="20" y="544" width="335" height="113"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLh-ml-2oC" userLabel="NextRound">
@@ -209,12 +215,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uii-qx-auK" secondAttribute="trailing" constant="28" id="Lm7-yb-LeP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fG-MJ-9uH" secondAttribute="bottom" constant="10" id="Oth-Hf-OMu"/>
                             <constraint firstItem="0fG-MJ-9uH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UbK-hX-mvE"/>
+                            <constraint firstItem="eKc-86-oyB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bkd-G6-FmR"/>
                             <constraint firstItem="0fG-MJ-9uH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uii-qx-auK" secondAttribute="bottom" constant="10" id="kx0-x0-EnS"/>
+                            <constraint firstItem="eKc-86-oyB" firstAttribute="top" secondItem="uii-qx-auK" secondAttribute="bottom" constant="2" id="t92-V1-sAs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="instructions" destination="3jj-kC-6Cc" id="aTV-d6-Inq"/>
+                        <outlet property="labelCountdown" destination="eKc-86-oyB" id="ibL-NS-BT7"/>
                         <outlet property="nextRound" destination="cLh-ml-2oC" id="MZt-NP-XyG"/>
                         <outletCollection property="eventLabels" destination="IbK-l9-KPq" collectionClass="NSMutableArray" id="yY9-n4-gmU"/>
                         <outletCollection property="eventLabels" destination="ErL-CZ-QS4" collectionClass="NSMutableArray" id="YaE-CJ-Lix"/>

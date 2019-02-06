@@ -11,8 +11,10 @@ import GameKit
 
 class ViewController: UIViewController {
     // MARK: Properties. Global variables go here.
-    
     var myGameManager = GameManager()
+    var timerDuration: Int = 60
+    var timer = Timer()
+    
     // MARK: - Outlets.  Use @IBOutlet collection instead of individual @IBOutlets for every label
     
     @IBOutlet var eventViews: [UIView]!
@@ -25,9 +27,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var instructions: UILabel!
     
+    @IBOutlet weak var labelCountdown: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // Create Timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
         
         // Create array of 4 random, non-repeating events
         getRandomEvents()
@@ -40,6 +46,10 @@ class ViewController: UIViewController {
         for eventView in eventViews {
             eventView.layer.cornerRadius = 4
             }
+        
+        // Programatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
+        
+        labelCountdown.center.y = nextRound.center.y
         
         }
     
@@ -151,9 +161,24 @@ class ViewController: UIViewController {
         viewDidLoad()
         myGameManager.roundEnded = false //reset roundEnded so checkAnswer() can run in response to shake.
         
+        
         // FIXME: Should all the property resets go here instead of in checkAnswer?
     }
     
+    // Counter helper method
+    @objc func counter() {
+        timerDuration -= 1
+        labelCountdown.text = String(timerDuration)
+        
+        if timerDuration == 0 {
+            // Stop the timer
+            timer.invalidate()
+            // Check Answer
+            checkAnswer()
+            myGameManager.roundEnded = true
+        }
+        
+    }
     // FIXME: Play another game
     // FIXME: Add displayScore()
     
