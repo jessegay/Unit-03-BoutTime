@@ -42,6 +42,8 @@ class ViewController: UIViewController {
         instructions.text = "Shake to complete"
         nextRound.isHidden = true
 
+        // set/reset timer. Where do I put this?
+        // timerDuration = 60 // reset timer
         // Round corners of event views. Use collection rather than doing each one separately.
         for eventView in eventViews {
             eventView.layer.cornerRadius = 4
@@ -125,7 +127,8 @@ class ViewController: UIViewController {
             myGameManager.eventsThisRound = []
             // reset myGameManager.datesThisRound to empty
             myGameManager.datesThisRound = []
-        
+            // reset timer
+            timerDuration = 60
             // Testing roundsPlayed
             print("You've played \(myGameManager.roundsPlayed) rounds")
             print("You have \(myGameManager.correctResponses) correct responses")
@@ -137,6 +140,9 @@ class ViewController: UIViewController {
         if myGameManager.roundEnded == false {
           checkAnswer()
           myGameManager.roundEnded = true
+          // timerDuration = 60 // reset timer
+          timer.invalidate() // Stop the timer
+            
         } else {
           print("You need to play the next round to re-enable Shake!")
         }
@@ -161,7 +167,6 @@ class ViewController: UIViewController {
         viewDidLoad()
         myGameManager.roundEnded = false //reset roundEnded so checkAnswer() can run in response to shake.
         
-        
         // FIXME: Should all the property resets go here instead of in checkAnswer?
     }
     
@@ -172,6 +177,7 @@ class ViewController: UIViewController {
         
         if timerDuration == 0 {
             // Stop the timer
+            // FIXME: This may be redundant if I include .invalidate and timer reset in checkAnswer()
             timer.invalidate()
             // Check Answer
             checkAnswer()

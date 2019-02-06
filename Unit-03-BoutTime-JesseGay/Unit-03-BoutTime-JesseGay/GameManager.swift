@@ -19,7 +19,7 @@ class GameManager {
     let eventsPerRound = 4
     var roundsPlayed = 0
     var correctResponses = 0
-    var timePerRound = 60
+    // var timePerRound = 60
     var roundEnded: Bool = false
     var indexOfSelectedEvent = 0 // might need better name
     var alreadyUsedInRound: [Int] = [] // use indices. Redundant?
