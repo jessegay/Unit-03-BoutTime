@@ -32,6 +32,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // Set counter to :60 so it displays correctly after reloading
+        labelCountdown.text = String(timerDuration)
         // Create Timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
         
@@ -164,6 +166,8 @@ class ViewController: UIViewController {
     
     @ IBAction func loadNextRound() {
         nextRound.isHidden = true // Hide nextRound button
+        // FIXME: create func startNextRound instead of calling viewDidLoad. Wait, so everything from viewDidLoad needs to go in here? Oh, actually it should all go into loadRound(), and call loadRound() from viewDidLoad()
+        
         viewDidLoad()
         myGameManager.roundEnded = false //reset roundEnded so checkAnswer() can run in response to shake.
         
