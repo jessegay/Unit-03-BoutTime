@@ -32,20 +32,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // Set counter to :60 so it displays correctly after reloading
-        labelCountdown.text = String(timerDuration)
-        // Create Timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
+        loadNextRound()
         
-        // Create array of 4 random, non-repeating events
-        getRandomEvents()
-        // Display them on the eventLabels
-        displayEvents()
-        instructions.text = "Shake to complete"
-        nextRound.isHidden = true
-
-        // set/reset timer. Where do I put this?
-        // timerDuration = 60 // reset timer
         // Round corners of event views. Use collection rather than doing each one separately.
         for eventView in eventViews {
             eventView.layer.cornerRadius = 4
@@ -165,12 +153,23 @@ class ViewController: UIViewController {
     // nextRound() : Call viewDidLoad(). Hide nextRound button.
     
     @ IBAction func loadNextRound() {
-        nextRound.isHidden = true // Hide nextRound button
-        // FIXME: create func startNextRound instead of calling viewDidLoad. Wait, so everything from viewDidLoad needs to go in here? Oh, actually it should all go into loadRound(), and call loadRound() from viewDidLoad()
+        // Set counter to :60 so it displays correctly after reloading
+        labelCountdown.text = String(timerDuration)
+        // Create Timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
+
+        // Create array of 4 random, non-repeating events
+        getRandomEvents()
+        // Display them on the eventLabels
+        displayEvents()
+        // Update instructions
+        instructions.text = "Shake to complete"
+        // Hide nextRound button
+        nextRound.isHidden = true
+        // reset roundEnded so checkAnswer() can run in response to shake.
+        myGameManager.roundEnded = false
         
-        viewDidLoad()
-        myGameManager.roundEnded = false //reset roundEnded so checkAnswer() can run in response to shake.
-        
+        // FIXME: If roundsPlayed = roundsPerGame labelCountdown.isHidden = true
         // FIXME: Should all the property resets go here instead of in checkAnswer?
     }
     
