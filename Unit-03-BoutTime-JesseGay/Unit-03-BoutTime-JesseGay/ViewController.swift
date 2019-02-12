@@ -21,13 +21,15 @@ class ViewController: UIViewController {
     // Connect historical labels to this outlet in order
     @IBOutlet var eventLabels: [UILabel]!
     
-    
     @IBOutlet weak var nextRound: UIButton!
     
-
     @IBOutlet weak var instructions: UILabel!
     
     @IBOutlet weak var labelCountdown: UILabel!
+    
+    @IBOutlet weak var score: UILabel!
+    
+    @IBOutlet weak var resultsStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +63,28 @@ class ViewController: UIViewController {
         }
     
 
-        
-    
     // MARK: Actions
-    
+    @ IBAction func loadRound() {
+        // Set counter to :60 so it displays correctly after reloading
+        labelCountdown.text = String(timerDuration)
+        // Create Timer
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
+        
+        // Create array of 4 random, non-repeating events
+        getRandomEvents()
+        // Display them on the eventLabels
+        displayEvents()
+        // Update instructions
+        instructions.text = "Shake to complete"
+        // Hide nextRound button
+        nextRound.isHidden = true
+        // reset roundEnded so checkAnswer() can run in response to shake.
+        myGameManager.roundEnded = false
+        // Hide resultsStack
+        resultsStack.isHidden = true
+        // FIXME: If roundsPlayed = roundsPerGame labelCountdown.isHidden = true
+        // FIXME: Should all the property resets go here instead of in checkAnswer?
+    }
     // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order. Testing by cabling it to bottom up button. Almost works, but events are offset by 1. I.e. first item in array is going to label 1, rather than label 0.
     
     // Connect all up buttons to moveUp, and down buttons to moveDown. Remember buttons need tags 0-3 for the logic to work.
@@ -93,7 +113,6 @@ class ViewController: UIViewController {
         }
             print(myGameManager.datesThisRound) // for testing. Delete.
         
-            
             // Check if they are in order
             if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
                 print("correct") // for testing. Delete.
@@ -102,7 +121,7 @@ class ViewController: UIViewController {
             } else {
                 // do something else.
                 print("incorrect") // for testing. Delete.
-             /*   nextRound.image = UIImage(named: "next_round_fail")   // change image to next_round_fail */
+              // change image to next_round_fail
                 let failButton = UIImage(named: "next_round_fail")
                 nextRound.setImage(failButton, for: .normal)
             }
@@ -122,6 +141,12 @@ class ViewController: UIViewController {
             // Testing roundsPlayed
             print("You've played \(myGameManager.roundsPlayed) rounds")
             print("You have \(myGameManager.correctResponses) correct responses")
+        
+            // call displayScore when game is over.
+        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
+            displayScore()
+        }
+        
         }
     
     
@@ -139,6 +164,7 @@ class ViewController: UIViewController {
         
         
         // End game if all rounds are complete.
+        // FIXME: I think the end game logic should be in checkAnswer()
         if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
             // displayScore()
             print("game over") // for testing, delete
@@ -150,28 +176,6 @@ class ViewController: UIViewController {
         
     }
  
-    // nextRound() : Call viewDidLoad(). Hide nextRound button.
-    
-    @ IBAction func loadRound() {
-        // Set counter to :60 so it displays correctly after reloading
-        labelCountdown.text = String(timerDuration)
-        // Create Timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
-
-        // Create array of 4 random, non-repeating events
-        getRandomEvents()
-        // Display them on the eventLabels
-        displayEvents()
-        // Update instructions
-        instructions.text = "Shake to complete"
-        // Hide nextRound button
-        nextRound.isHidden = true
-        // reset roundEnded so checkAnswer() can run in response to shake.
-        myGameManager.roundEnded = false
-        
-        // FIXME: If roundsPlayed = roundsPerGame labelCountdown.isHidden = true
-        // FIXME: Should all the property resets go here instead of in checkAnswer?
-    }
     
     // Counter helper method
     @objc func counter() {
@@ -189,7 +193,16 @@ class ViewController: UIViewController {
         
     }
     // FIXME: Play another game
+    
+    @IBAction func playAgain(_ sender: Any) {
+    }
+    
     // FIXME: Add displayScore()
+    func displayScore() {
+        score.text = "\( myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
+        resultsStack.isHidden = false
+        // FIXME: Need to hide all the other stuff, then reenable as needed with playAgain()
+    }
     
 }
         

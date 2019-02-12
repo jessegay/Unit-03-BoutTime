@@ -206,25 +206,56 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w7w-Ne-YEF">
+                                <rect key="frame" x="104" y="246.5" width="167" height="174"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wP-gu-6v3">
+                                        <rect key="frame" x="23" y="0.0" width="121" height="31.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ed-Dc-aW8">
+                                        <rect key="frame" x="34.5" y="39.5" width="98.5" height="76.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXB-3f-IJa">
+                                        <rect key="frame" x="0.0" y="124" width="167" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YXB-3f-IJa" secondAttribute="height" multiplier="250:75" id="W0V-wr-eXh"/>
+                                            <constraint firstAttribute="height" constant="50" id="rOH-wt-Bkj"/>
+                                        </constraints>
+                                        <state key="normal" title="Play Again" image="play_again"/>
+                                        <connections>
+                                            <action selector="playAgain:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2ZX-PK-iyd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uii-qx-auK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="3c1-kL-6zy"/>
                             <constraint firstItem="uii-qx-auK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="Dg7-lr-2fn"/>
                             <constraint firstAttribute="trailing" secondItem="0fG-MJ-9uH" secondAttribute="trailing" constant="20" id="IqK-Oq-qHU"/>
+                            <constraint firstItem="w7w-Ne-YEF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JNi-Bq-ivD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uii-qx-auK" secondAttribute="trailing" constant="28" id="Lm7-yb-LeP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fG-MJ-9uH" secondAttribute="bottom" constant="10" id="Oth-Hf-OMu"/>
                             <constraint firstItem="0fG-MJ-9uH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UbK-hX-mvE"/>
                             <constraint firstItem="eKc-86-oyB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bkd-G6-FmR"/>
                             <constraint firstItem="0fG-MJ-9uH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uii-qx-auK" secondAttribute="bottom" constant="10" id="kx0-x0-EnS"/>
+                            <constraint firstItem="w7w-Ne-YEF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rV0-l5-x72"/>
                             <constraint firstItem="eKc-86-oyB" firstAttribute="top" secondItem="uii-qx-auK" secondAttribute="bottom" constant="2" id="t92-V1-sAs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="Score" destination="1Ed-Dc-aW8" id="7nm-ev-azV"/>
                         <outlet property="instructions" destination="3jj-kC-6Cc" id="aTV-d6-Inq"/>
                         <outlet property="labelCountdown" destination="eKc-86-oyB" id="ibL-NS-BT7"/>
                         <outlet property="nextRound" destination="cLh-ml-2oC" id="MZt-NP-XyG"/>
+                        <outlet property="resultsStack" destination="w7w-Ne-YEF" id="Kyl-MJ-A8t"/>
                         <outletCollection property="eventLabels" destination="IbK-l9-KPq" collectionClass="NSMutableArray" id="yY9-n4-gmU"/>
                         <outletCollection property="eventLabels" destination="ErL-CZ-QS4" collectionClass="NSMutableArray" id="YaE-CJ-Lix"/>
                         <outletCollection property="eventLabels" destination="Qrp-yV-ZGh" collectionClass="NSMutableArray" id="s9X-MG-bSx"/>
@@ -244,6 +275,7 @@
         <image name="down_full" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
+        <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
     </resources>
