@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        loadNextRound()
+        loadRound()
         
         // Round corners of event views. Use collection rather than doing each one separately.
         for eventView in eventViews {
@@ -152,7 +152,7 @@ class ViewController: UIViewController {
  
     // nextRound() : Call viewDidLoad(). Hide nextRound button.
     
-    @ IBAction func loadNextRound() {
+    @ IBAction func loadRound() {
         // Set counter to :60 so it displays correctly after reloading
         labelCountdown.text = String(timerDuration)
         // Create Timer
