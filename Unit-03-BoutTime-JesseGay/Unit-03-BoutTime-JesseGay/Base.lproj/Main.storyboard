@@ -206,6 +206,16 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De4-Mh-ahn" userLabel="checkFinalScore">
+                                <rect key="frame" x="79" y="554" width="217" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Check Final Score!">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MxG-M5-pTB" kind="showDetail" identifier="finalScoreSegue" id="c3G-Je-ciU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1647058824" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -213,16 +223,19 @@
                             <constraint firstItem="uii-qx-auK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="Dg7-lr-2fn"/>
                             <constraint firstAttribute="trailing" secondItem="0fG-MJ-9uH" secondAttribute="trailing" constant="20" id="IqK-Oq-qHU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uii-qx-auK" secondAttribute="trailing" constant="28" id="Lm7-yb-LeP"/>
+                            <constraint firstItem="De4-Mh-ahn" firstAttribute="top" secondItem="QFY-hY-Ann" secondAttribute="bottom" constant="20" id="Nva-Ip-Wct"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0fG-MJ-9uH" secondAttribute="bottom" constant="10" id="Oth-Hf-OMu"/>
                             <constraint firstItem="0fG-MJ-9uH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UbK-hX-mvE"/>
                             <constraint firstItem="eKc-86-oyB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bkd-G6-FmR"/>
                             <constraint firstItem="0fG-MJ-9uH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uii-qx-auK" secondAttribute="bottom" constant="10" id="kx0-x0-EnS"/>
+                            <constraint firstItem="De4-Mh-ahn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rLa-tH-rWD"/>
                             <constraint firstItem="eKc-86-oyB" firstAttribute="top" secondItem="uii-qx-auK" secondAttribute="bottom" constant="2" id="t92-V1-sAs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="Score" destination="1Ed-Dc-aW8" id="7nm-ev-azV"/>
+                        <outlet property="checkFinalScore" destination="De4-Mh-ahn" id="Xj0-oh-Iuu"/>
                         <outlet property="instructions" destination="3jj-kC-6Cc" id="aTV-d6-Inq"/>
                         <outlet property="labelCountdown" destination="eKc-86-oyB" id="ibL-NS-BT7"/>
                         <outlet property="nextRound" destination="cLh-ml-2oC" id="MZt-NP-XyG"/>
@@ -235,7 +248,6 @@
                         <outletCollection property="eventViews" destination="38o-Si-UiR" collectionClass="NSMutableArray" id="xdO-Fa-sA4"/>
                         <outletCollection property="eventViews" destination="GKU-cB-a4F" collectionClass="NSMutableArray" id="yww-F4-x04"/>
                         <outletCollection property="eventViews" destination="QFY-hY-Ann" collectionClass="NSMutableArray" id="A2M-pw-L78"/>
-                        <segue destination="MxG-M5-pTB" kind="presentation" identifier="finalScoreSegue" id="kBi-MT-mp1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -27,7 +27,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var labelCountdown: UILabel!
     
-    @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var checkFinalScore: UIButton!
+    //@IBOutlet weak var score: UILabel!
     
     @IBOutlet weak var resultsStack: UIStackView!
     
@@ -80,12 +81,20 @@ class ViewController: UIViewController {
         instructions.text = "Shake to complete"
         // Hide nextRound button
         nextRound.isHidden = true
+        // Hide checkFinalScore button
+        checkFinalScore.isHidden = true
         // reset roundEnded so checkAnswer() can run in response to shake.
         myGameManager.roundEnded = false
-        // Hide resultsStack.
-        // FIXME: Do I need this if I present results modally?
-        // resultsStack.isHidden = true
-        // FIXME: If roundsPlayed = roundsPerGame labelCountdown.isHidden = true
+        
+        
+        
+        // FIXME: show/hide end of game buttons. Wait, this should go in check answer.
+        
+        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
+            labelCountdown.isHidden = true
+            nextRound.isHidden = true
+            checkFinalScore.isHidden = false
+        }
         // FIXME: Should all the property resets go here instead of in checkAnswer?
     }
     // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order. Testing by cabling it to bottom up button. Almost works, but events are offset by 1. I.e. first item in array is going to label 1, rather than label 0.
@@ -145,12 +154,12 @@ class ViewController: UIViewController {
             print("You've played \(myGameManager.roundsPlayed) rounds")
             print("You have \(myGameManager.correctResponses) correct responses")
         
-            // call displayScore when game is over.
+        // show/hide end of game buttons
         if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
-            displayScore()
-            //performSegue(withIdentifier: "finalScoreSegue", sender: nil)
+            labelCountdown.isHidden = true
+            nextRound.isHidden = true
+            checkFinalScore.isHidden = false
         }
-        
         }
     
     
@@ -196,13 +205,12 @@ class ViewController: UIViewController {
         }
         
     }
-    // FIXME: Play another game (might not need this if the actions are included in the FinalScoreViewController)
-  
+ 
     // FIXME: Add segue to finalScoreViewController
-    func displayScore() {
-       performSegue(withIdentifier: "finalScoreSegue", sender: nil)
-    }
-    
+//    func displayScore() {
+//       performSegue(withIdentifier: "finalScoreSegue", sender: nil)
+//    }
+//
     
     func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "finalScoreSegue" {
