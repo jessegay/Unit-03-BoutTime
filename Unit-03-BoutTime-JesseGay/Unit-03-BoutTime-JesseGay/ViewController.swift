@@ -87,15 +87,7 @@ class ViewController: UIViewController {
         myGameManager.roundEnded = false
         
         
-        
-        // FIXME: show/hide end of game buttons. Wait, this should go in check answer.
-        
-        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
-            labelCountdown.isHidden = true
-            nextRound.isHidden = true
-            checkFinalScore.isHidden = false
-        }
-        // FIXME: Should all the property resets go here instead of in checkAnswer?
+
     }
     // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order. Testing by cabling it to bottom up button. Almost works, but events are offset by 1. I.e. first item in array is going to label 1, rather than label 0.
     
