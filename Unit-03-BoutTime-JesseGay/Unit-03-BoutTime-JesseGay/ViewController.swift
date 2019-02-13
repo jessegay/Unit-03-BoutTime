@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        // FIXME: Delete this print test statement. Testing that game properties get reset after returning from finalScoreView.
+        print("I've been loaded. \(myGameManager.roundsPlayed) round have been played ")
         loadRound()
         
         // Round corners of event views. Use collection rather than doing each one separately.
@@ -80,8 +82,9 @@ class ViewController: UIViewController {
         nextRound.isHidden = true
         // reset roundEnded so checkAnswer() can run in response to shake.
         myGameManager.roundEnded = false
-        // Hide resultsStack
-        resultsStack.isHidden = true
+        // Hide resultsStack.
+        // FIXME: Do I need this if I present results modally?
+        // resultsStack.isHidden = true
         // FIXME: If roundsPlayed = roundsPerGame labelCountdown.isHidden = true
         // FIXME: Should all the property resets go here instead of in checkAnswer?
     }
@@ -192,16 +195,20 @@ class ViewController: UIViewController {
         }
         
     }
-    // FIXME: Play another game
-    
-    @IBAction func playAgain(_ sender: Any) {
-    }
-    
-    // FIXME: Add displayScore()
+    // FIXME: Play another game (might not need this if the actions are included in the FinalScoreViewController)
+  
+    // FIXME: Add displayScore(). Some of the commented out code is from the messy solution. 
     func displayScore() {
-        score.text = "\( myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
-        resultsStack.isHidden = false
-        // FIXME: Need to hide all the other stuff, then reenable as needed with playAgain()
+        // score.text = "\( myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
+        // resultsStack.isHidden = false
+        
+        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            if segue.identifier == "finalScoreSegue" {
+                let finalScoreViewController = segue.destination as! FinalScoreViewController
+                finalScoreViewController.score = "\(myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
+            }
+        }
+        performSegue(withIdentifier: "finalScoreSegue", sender: nil)
     }
     
 }
