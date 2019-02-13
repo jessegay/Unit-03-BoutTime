@@ -148,6 +148,7 @@ class ViewController: UIViewController {
             // call displayScore when game is over.
         if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
             displayScore()
+            //performSegue(withIdentifier: "finalScoreSegue", sender: nil)
         }
         
         }
@@ -197,20 +198,18 @@ class ViewController: UIViewController {
     }
     // FIXME: Play another game (might not need this if the actions are included in the FinalScoreViewController)
   
-    // FIXME: Add displayScore(). Some of the commented out code is from the messy solution. 
+    // FIXME: Add segue to finalScoreViewController
     func displayScore() {
-        // score.text = "\( myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
-        // resultsStack.isHidden = false
-        
-        func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            if segue.identifier == "finalScoreSegue" {
-                let finalScoreViewController = segue.destination as! FinalScoreViewController
-                finalScoreViewController.score = "\(myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
-            }
-        }
-        performSegue(withIdentifier: "finalScoreSegue", sender: nil)
+       performSegue(withIdentifier: "finalScoreSegue", sender: nil)
     }
     
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "finalScoreSegue" {
+            let finalScoreViewController = segue.destination as! FinalScoreViewController
+            finalScoreViewController.score = "\(myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
+        }
+    }
 }
         
         
