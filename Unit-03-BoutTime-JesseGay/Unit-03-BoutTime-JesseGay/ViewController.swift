@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         
 
     }
-    // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order. Testing by cabling it to bottom up button. Almost works, but events are offset by 1. I.e. first item in array is going to label 1, rather than label 0.
+    // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order.
     
     // Connect all up buttons to moveUp, and down buttons to moveDown. Remember buttons need tags 0-3 for the logic to work.
     
@@ -129,7 +129,7 @@ class ViewController: UIViewController {
                 let failButton = UIImage(named: "next_round_fail")
                 nextRound.setImage(failButton, for: .normal)
             }
-            //nextRound.isEnabled = true // Is this needed? Aren't buttons enabled by default?
+            // Show nextRound button
             nextRound.isHidden = false
             // Change instructions to "Tap events to learn more"
             instructions.text = "Tap events to learn more"
@@ -148,10 +148,12 @@ class ViewController: UIViewController {
         
         // show/hide end of game buttons
         if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
+            print("game over") // for testing
             labelCountdown.isHidden = true
             nextRound.isHidden = true
             checkFinalScore.isHidden = false
-        }
+            // MARK: performSegue(withIdentifier: "finalScoreSegue", sender: nil) // < could use this to show score automatically (as opposed to requiring clicking of checkScore)
+            }
         }
     
     
@@ -162,23 +164,9 @@ class ViewController: UIViewController {
           myGameManager.roundEnded = true
           // timerDuration = 60 // reset timer
           timer.invalidate() // Stop the timer
-            
         } else {
           print("You need to play the next round to re-enable Shake!")
         }
-        
-        
-        // End game if all rounds are complete.
-        // FIXME: I think the end game logic should be in checkAnswer()
-        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
-            // displayScore()
-            print("game over") // for testing, delete
-            nextRound.isHidden = true // Hide button so they can't keep playing. Eventually this will trigger the FinalScore view so this may be redundant. Circle back once FinalScore is in place.
-        } else {
-            // do something else (or just return?)
-        }
-        // self.view.isUserInteractionEnabled = false // Could this be a clue about deactivating motionEnded until next round?
-        
     }
  
     
@@ -195,16 +183,10 @@ class ViewController: UIViewController {
             checkAnswer()
             myGameManager.roundEnded = true
         }
-        
     }
  
-    // FIXME: Add segue to finalScoreViewController
-//    func displayScore() {
-//       performSegue(withIdentifier: "finalScoreSegue", sender: nil)
-//    }
-//
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    // Pass final score to finalScoreViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "finalScoreSegue" {
             let finalScoreViewController = segue.destination as! FinalScoreViewController
             finalScoreViewController.score = "\(myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
