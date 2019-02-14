@@ -12,16 +12,16 @@ import Foundation
 
 struct EventStruct {
     var eventCollection: [Event] = [
-        Event(eventName: "\"This Is America\" by Childish Gambino", date: 2018),
-        Event(eventName: "\"Starboy\" by The Weekend feat. Daft Punk",
-            date: 2017),
-        Event(eventName: "\"Hello\" by Adele", date: 2016),
-        Event(eventName: "\"Can't Feel My Face\" by The Weekend", date: 2015),
-        Event(eventName: "\"Happy\" by Pharrell Williams", date: 2014),
-        Event(eventName: "\"Royals\" by Lorde", date: 2013),
-        Event(eventName: "\"Somebody That I Used To Know\" by Gotye", date: 2012),
-        Event(eventName: "\"Rolling In The Deep\" by Adele", date: 2011),
-        Event(eventName: "\"Poker Face\" by Lady Gaga", date: 2009)
+        Event(eventName: "\"God's Plan\" by Drake", date: 2018, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2018"),
+        Event(eventName: "\"Shape of You\" by Ed Sheeran",
+              date: 2017, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2017"),
+        Event(eventName: "\"Love Yourself\" by Justin Bieber", date: 2016, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2016"),
+        Event(eventName: "\"Uptown Funk\" by Mark Ronson feat. Bruno Mars", date: 2015, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2015"),
+        Event(eventName: "\"Happy\" by Pharrell Williams", date: 2014, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2014"),
+        Event(eventName: "\"Thrift Shop\" by Macklemore & Ryan Lewis featuring Wanz", date: 2013, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2013"),
+        Event(eventName: "\"Somebody That I Used To Know\" by Gotye feat. Kimbra", date: 2012, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2012"),
+        Event(eventName: "\"Rolling In The Deep\" by Adele", date: 2011, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2011"),
+        Event(eventName: "\"Irreplaceable\" by Beyoncé", date: 2009, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2007")
 
 
 

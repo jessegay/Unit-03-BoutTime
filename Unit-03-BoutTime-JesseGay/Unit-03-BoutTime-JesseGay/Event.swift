@@ -15,6 +15,7 @@ import Foundation // Do I need this in every file?
 struct Event {
     var eventName: String
     var date: Int
+    var url: String
 }
 
 

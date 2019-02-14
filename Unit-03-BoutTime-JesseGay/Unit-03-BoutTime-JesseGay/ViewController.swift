@@ -18,8 +18,10 @@ class ViewController: UIViewController {
     // MARK: - Outlets.  Use @IBOutlet collection instead of individual @IBOutlets for every label
     
     @IBOutlet var eventViews: [UIView]!
+    // FIXME: Add tap gesture recognizers to the views
     // Connect historical labels to this outlet in order
     @IBOutlet var eventLabels: [UILabel]!
+    
     
     @IBOutlet weak var nextRound: UIButton!
     
@@ -48,6 +50,7 @@ class ViewController: UIViewController {
         
         labelCountdown.center.y = nextRound.center.y
         
+        
         }
     
         // MARK: - Helpers
@@ -64,8 +67,8 @@ class ViewController: UIViewController {
             label.text = event.eventName
             }
         }
+    // If I have to change the eventLabels to eventButtons, then I guess this would just become for (event, button) in zip(myGameManager.eventsThisRound, eventButtons) {button.title = event.eventName}
     
-
     // MARK: Actions
     @ IBAction func loadRound() {
         // Set counter to :60 so it displays correctly after reloading
@@ -90,7 +93,7 @@ class ViewController: UIViewController {
 
     }
     // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order.
-    
+    // FIXME: Occasionally get indexOutOfRange error from bottonUp button. Can't reproduce. Seemed to happen when I was clicking very rapidly. Could this have overwhelmed simulator?
     // Connect all up buttons to moveUp, and down buttons to moveDown. Remember buttons need tags 0-3 for the logic to work.
     
     @IBAction func moveUp(_ sender: UIButton) {
@@ -191,6 +194,21 @@ class ViewController: UIViewController {
             let finalScoreViewController = segue.destination as! FinalScoreViewController
             finalScoreViewController.score = "\(myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
         }
+    }
+    
+    // FIXME: Get URL of event of label selected. Then pass this to the safariWebView. Not sure if I need self. here.
+    
+    func getURLofEventSelected() -> String {
+        let eventName = sender.title // < this needs to be title of button clicked.
+        for event in myGameManager.eventStruct.eventCollection {
+            if event.eventName = eventName {
+                return event.url
+            }
+        }
+        //let test = self.myGameManager.eventStruct.eventCollection[2].url
+        //let url = test.url
+        //return test
+        //return url
     }
 }
         
