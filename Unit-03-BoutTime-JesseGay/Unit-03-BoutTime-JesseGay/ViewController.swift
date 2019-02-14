@@ -22,6 +22,8 @@ class ViewController: UIViewController {
     // Connect historical labels to this outlet in order
     @IBOutlet var eventLabels: [UILabel]!
     
+    // Tap gesture recognizers for the 4 eventViews
+    @IBOutlet var eventTapGestures: [UITapGestureRecognizer]!
     
     @IBOutlet weak var nextRound: UIButton!
     
@@ -49,7 +51,6 @@ class ViewController: UIViewController {
         // Programatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
         
         labelCountdown.center.y = nextRound.center.y
-        
         
         }
     
@@ -196,24 +197,40 @@ class ViewController: UIViewController {
         }
     }
     
-    // FIXME: Get URL of event of label selected. Then pass this to the safariWebView. Not sure if I need self. here.
     
-    func getURLofEventSelected() -> String {
-        let eventName = sender.title // < this needs to be title of button clicked.
+    
+    
+    // FIXME: Get URL of event of label selected. Then pass this to the safariWebView. Not sure if I need self. here.
+    // This is supposed to be a function to get the URL of a button. Will have to modify to work with tapGestureRecognizer
+    func getURLofEventSelected(_ sender: UIButton) -> String {
+        var url = ""
+        let eventName = sender.title(for: .normal) // < this needs to be title of button clicked.
         for event in myGameManager.eventStruct.eventCollection {
-            if event.eventName = eventName {
-                return event.url
+            if event.eventName == eventName {
+               url = event.url
             }
         }
-        //let test = self.myGameManager.eventStruct.eventCollection[2].url
-        //let url = test.url
-        //return test
-        //return url
+        return url
     }
+    
+    // FIXME: Tap Gesture Recognizer Actions.
+    // Currently all 4 gesture zones are connected here, but they just call a print statement. How do I access the properties of the event in the view?
+    
+    @IBAction func eventViewTapped(_ sender: UITapGestureRecognizer) {
+        let tapProperty = sender.numberOfTapsRequired
+        print(tapProperty)
+    }
+    
+    
+    
 }
         
         
-    
+
+// Testing
+//let test = self.myGameManager.eventStruct.eventCollection[2].url
+//let url = test.url
+//return test
 
 
 

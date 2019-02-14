@@ -77,6 +77,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="uPx-6a-n6Q" secondAttribute="trailing" id="43v-tI-Tr9"/>
                                             <constraint firstItem="IbK-l9-KPq" firstAttribute="centerY" secondItem="dsr-mG-yVv" secondAttribute="centerY" id="6Mb-SC-uwF"/>
@@ -86,6 +87,9 @@
                                             <constraint firstAttribute="bottom" secondItem="uPx-6a-n6Q" secondAttribute="bottom" id="lWb-Aw-JHe"/>
                                             <constraint firstItem="uPx-6a-n6Q" firstAttribute="leading" secondItem="IbK-l9-KPq" secondAttribute="trailing" constant="30" id="ouf-sR-wK1"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="UhP-me-V1S" appends="YES" id="pIV-09-B6U"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38o-Si-UiR" userLabel="Event 1 View">
                                         <rect key="frame" x="0.0" y="128" width="320" height="120"/>
@@ -118,6 +122,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="j3M-T6-xN2" firstAttribute="top" secondItem="50U-GF-1fg" secondAttribute="bottom" id="1sP-hu-dmz"/>
                                             <constraint firstAttribute="trailing" secondItem="50U-GF-1fg" secondAttribute="trailing" id="7T2-xQ-aJD"/>
@@ -129,6 +134,9 @@
                                             <constraint firstAttribute="trailing" secondItem="j3M-T6-xN2" secondAttribute="trailing" id="kcJ-8g-Uom"/>
                                             <constraint firstItem="50U-GF-1fg" firstAttribute="top" secondItem="38o-Si-UiR" secondAttribute="top" id="qiV-KR-wGF"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="aiL-lc-5ei" appends="YES" id="rDD-Qo-XRz"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKU-cB-a4F" userLabel="Event 2 View">
                                         <rect key="frame" x="0.0" y="256" width="320" height="120"/>
@@ -161,6 +169,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="p47-JC-FUd" secondAttribute="trailing" id="0hb-i4-DDR"/>
                                             <constraint firstItem="hUB-TY-28w" firstAttribute="top" secondItem="p47-JC-FUd" secondAttribute="bottom" id="Bmd-7H-xRh"/>
@@ -172,6 +181,9 @@
                                             <constraint firstItem="Qrp-yV-ZGh" firstAttribute="centerY" secondItem="GKU-cB-a4F" secondAttribute="centerY" id="pSF-M0-QAQ"/>
                                             <constraint firstItem="p47-JC-FUd" firstAttribute="leading" secondItem="Qrp-yV-ZGh" secondAttribute="trailing" constant="30" id="wMf-el-FIY"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="NsX-eg-d0P" appends="YES" id="O8S-vu-Ydt"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFY-hY-Ann" userLabel="Event 3 View">
                                         <rect key="frame" x="0.0" y="384" width="320" height="120"/>
@@ -194,6 +206,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="mVt-tB-mrG" firstAttribute="centerY" secondItem="QFY-hY-Ann" secondAttribute="centerY" id="6IJ-ql-Zm1"/>
                                             <constraint firstItem="TPI-Xp-ktt" firstAttribute="centerY" secondItem="QFY-hY-Ann" secondAttribute="centerY" id="FWT-CS-AmL"/>
@@ -203,6 +216,9 @@
                                             <constraint firstAttribute="bottom" secondItem="TPI-Xp-ktt" secondAttribute="bottom" id="b22-HL-L4c"/>
                                             <constraint firstAttribute="trailing" secondItem="TPI-Xp-ktt" secondAttribute="trailing" id="uD4-nI-TvR"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="aie-Aj-R6N" appends="YES" id="G0T-98-vgN"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                             </stackView>
@@ -248,9 +264,33 @@
                         <outletCollection property="eventViews" destination="38o-Si-UiR" collectionClass="NSMutableArray" id="xdO-Fa-sA4"/>
                         <outletCollection property="eventViews" destination="GKU-cB-a4F" collectionClass="NSMutableArray" id="yww-F4-x04"/>
                         <outletCollection property="eventViews" destination="QFY-hY-Ann" collectionClass="NSMutableArray" id="A2M-pw-L78"/>
+                        <outletCollection property="eventTapGestures" destination="UhP-me-V1S" collectionClass="NSMutableArray" id="NSB-Wx-McM"/>
+                        <outletCollection property="eventTapGestures" destination="aiL-lc-5ei" collectionClass="NSMutableArray" id="J3W-Om-uQq"/>
+                        <outletCollection property="eventTapGestures" destination="NsX-eg-d0P" collectionClass="NSMutableArray" id="3t4-pf-oXq"/>
+                        <outletCollection property="eventTapGestures" destination="aie-Aj-R6N" collectionClass="NSMutableArray" id="xS2-OJ-I8G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UhP-me-V1S" userLabel="Tap Gesture Recognizer 0">
+                    <connections>
+                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="3YZ-A3-1Qk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aiL-lc-5ei" userLabel="Tap Gesture Recognizer 1">
+                    <connections>
+                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="e4S-q7-adI"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="NsX-eg-d0P" userLabel="Tap Gesture Recognizer 2">
+                    <connections>
+                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="BQQ-e7-k0A"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aie-Aj-R6N" userLabel="Tap Gesture Recognizer 3">
+                    <connections>
+                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="AnD-C9-6ex"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="61.600000000000001" y="27.436281859070466"/>
         </scene>
