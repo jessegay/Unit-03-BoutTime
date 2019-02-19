@@ -50,8 +50,7 @@ class ViewController: UIViewController {
             eventView.layer.cornerRadius = 4
             }
         
-        eventViews[1].tag = 1
-        print("eventView 1 tag is \(eventViews[1].tag)")
+    
         // Programatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
         
         labelCountdown.center.y = nextRound.center.y
@@ -72,7 +71,14 @@ class ViewController: UIViewController {
             label.text = event.eventName
             }
         }
-    // If I have to change the eventLabels to eventButtons, then I guess this would just become for (event, button) in zip(myGameManager.eventsThisRound, eventButtons) {button.title = event.eventName}
+        // If I have to change the eventLabels to eventButtons, then I guess this would just become for (event, button) in zip(myGameManager.eventsThisRound, eventButtons) {button.title = event.eventName}
+    
+        // Assign tags of events in eventsThisRound to eventViews. Then use eventView.tag to refer back to the event to know which view was pressed to get URL. Call this upon first load, and every time someone moves an event.
+        func idToTag() {
+            for (event, view) in zip(myGameManager.eventsThisRound, eventViews) {
+                view.tag = event.id
+            }
+        }
     
     // MARK: Actions
     @ IBAction func loadRound() {
@@ -85,6 +91,8 @@ class ViewController: UIViewController {
         getRandomEvents()
         // Display them on the eventLabels
         displayEvents()
+        // Assign Event.id to eventViews.tag
+        idToTag()
         // Update instructions
         instructions.text = "Shake to complete"
         // Hide nextRound button
@@ -94,6 +102,10 @@ class ViewController: UIViewController {
         // reset roundEnded so checkAnswer() can run in response to shake.
         myGameManager.roundEnded = false
         
+        // FIXME: Testing tag assignment upon load. Delete.
+        for view in eventViews {
+            print(view.tag)
+        }
         
 
     }
@@ -106,14 +118,24 @@ class ViewController: UIViewController {
         let tagAbove = tagOfButtonPressed - 1
         myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagAbove)
         displayEvents()
-    }
+        idToTag()
+        // FIXME: Testing tag assignment upon moveUp(). Delete.
+        for view in eventViews {
+            print("tags are \(view.tag)")
+            }
+        }
     // moveDown()
     @IBAction func moveDown(_ sender: UIButton) {
         let tagOfButtonPressed = sender.tag
         let tagBelow = tagOfButtonPressed + 1
         myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagBelow)
         displayEvents()
-    }
+        idToTag()
+        // FIXME: Testing tag assignment upon moveDown(). Delete.
+        for view in eventViews {
+            print("tags are \(view.tag)")
+            }
+        }
     // checkAnswer()
     
     func checkAnswer() {
@@ -202,13 +224,7 @@ class ViewController: UIViewController {
     }
     
     
-    // TODO: Assign tags of events in eventsThisRound to eventViews. Then use eventView.tag to refer back to the event to know which view was pressed to get URL. Call this upon first load, and every time someone moves an event.
-    func idToTag() {
-        for (event, view) in zip(myGameManager.eventsThisRound, eventViews) {
-            view.tag = event.id
-            }
-        }
-    
+  
     // FIXME: Get URL of event of label selected. Then pass this to the safariWebView. Not sure if I need self. here.
     // This is supposed to be a function to get the URL of a button. Will have to modify to work with tapGestureRecognizer
     // Actually this is probably not the right road. Going to try another way based on Dennis' suggestion.
