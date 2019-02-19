@@ -8,8 +8,9 @@
 
 import UIKit
 import GameKit
+import SafariServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SFSafariViewControllerDelegate {
     // MARK: Properties. Global variables go here.
     var myGameManager = GameManager()
     var timerDuration: Int = 60
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
             eventView.layer.cornerRadius = 4
             }
         
-    
+        
         // Programatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
         
         labelCountdown.center.y = nextRound.center.y
@@ -225,19 +226,35 @@ class ViewController: UIViewController {
     
     
   
-    // FIXME: Get URL of event of label selected. Then pass this to the safariWebView. Not sure if I need self. here.
-    // This is supposed to be a function to get the URL of a button. Will have to modify to work with tapGestureRecognizer
-    // Actually this is probably not the right road. Going to try another way based on Dennis' suggestion.
-    func getURLofEventSelected(_ sender: UIButton) -> String {
-        var url = ""
-        let eventName = sender.title(for: .normal) // < this needs to be title of button clicked.
-        for event in myGameManager.eventStruct.eventCollection {
-            if event.eventName == eventName {
-               url = event.url
+    // FIXME: Get URL of event of label selected. Then pass this to the safariWebView.
+    @IBAction func openURLOfEventTapped(_ sender: UITapGestureRecognizer) {
+        var url: URL?
+        guard let tag = sender.view?.tag else { return }
+        for event in myGameManager.eventsThisRound {
+            if event.id == tag {
+              url = getURLForEvent(event)
             }
         }
+        if let url = url {
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true, completion: nil)
+        safariVC.delegate = self
+        }
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    // FIXME: Should this be defined in GameManager rather than in the ViewController?
+    func getURLForEvent(_ event: Event) -> URL? {
+        guard let url = URL(string: event.url) else { return nil}
         return url
     }
+    
+    
+    
+    
     
     // FIXME: Tap Gesture Recognizer Actions.
     // Currently all 4 gesture zones are connected here, but they just call a print statement. How do I access the properties of the event in the view?
@@ -261,4 +278,20 @@ class ViewController: UIViewController {
 
 
 
-
+/*
+ func getURLofEventSelected(_ sender: UIButton) -> String {
+ var url = ""
+ let eventName = sender.title(for: .normal) // < this needs to be title of button clicked.
+ for event in myGameManager.eventStruct.eventCollection {
+ if event.eventName == eventName {
+ url = event.url
+ }
+ }
+ return url
+ }
+ 
+ 
+ 
+ 
+ 
+ */
