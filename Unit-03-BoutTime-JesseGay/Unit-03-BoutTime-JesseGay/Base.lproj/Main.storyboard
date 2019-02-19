@@ -278,22 +278,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="UhP-me-V1S" userLabel="Tap Gesture Recognizer 0">
                     <connections>
-                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="3YZ-A3-1Qk"/>
+                        <action selector="openURLOfEventTapped:" destination="BYZ-38-t0r" id="xRg-UM-z0F"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="aiL-lc-5ei" userLabel="Tap Gesture Recognizer 1">
                     <connections>
-                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="e4S-q7-adI"/>
+                        <action selector="openURLOfEventTapped:" destination="BYZ-38-t0r" id="51S-nU-GIn"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="NsX-eg-d0P" userLabel="Tap Gesture Recognizer 2">
                     <connections>
-                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="BQQ-e7-k0A"/>
+                        <action selector="openURLOfEventTapped:" destination="BYZ-38-t0r" id="T6a-uq-DKb"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="aie-Aj-R6N" userLabel="Tap Gesture Recognizer 3">
                     <connections>
-                        <action selector="eventViewTapped:" destination="BYZ-38-t0r" id="AnD-C9-6ex"/>
+                        <action selector="openURLOfEventTapped:" destination="BYZ-38-t0r" id="cs6-42-jZu"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
