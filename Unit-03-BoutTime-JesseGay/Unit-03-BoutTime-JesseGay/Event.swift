@@ -16,6 +16,7 @@ struct Event {
     var eventName: String
     var date: Int
     var url: String
+    var id: Int
 }
 
 

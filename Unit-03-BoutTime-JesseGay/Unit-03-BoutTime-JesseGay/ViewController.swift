@@ -15,7 +15,9 @@ class ViewController: UIViewController {
     var timerDuration: Int = 60
     var timer = Timer()
     
+   
     // MARK: - Outlets.  Use @IBOutlet collection instead of individual @IBOutlets for every label
+    
     
     @IBOutlet var eventViews: [UIView]!
     // FIXME: Add tap gesture recognizers to the views
@@ -48,6 +50,8 @@ class ViewController: UIViewController {
             eventView.layer.cornerRadius = 4
             }
         
+        eventViews[1].tag = 1
+        print("eventView 1 tag is \(eventViews[1].tag)")
         // Programatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
         
         labelCountdown.center.y = nextRound.center.y
@@ -198,10 +202,16 @@ class ViewController: UIViewController {
     }
     
     
-    
+    // TODO: Assign tags of events in eventsThisRound to eventViews. Then use eventView.tag to refer back to the event to know which view was pressed to get URL. Call this upon first load, and every time someone moves an event.
+    func idToTag() {
+        for (event, view) in zip(myGameManager.eventsThisRound, eventViews) {
+            view.tag = event.id
+            }
+        }
     
     // FIXME: Get URL of event of label selected. Then pass this to the safariWebView. Not sure if I need self. here.
     // This is supposed to be a function to get the URL of a button. Will have to modify to work with tapGestureRecognizer
+    // Actually this is probably not the right road. Going to try another way based on Dennis' suggestion.
     func getURLofEventSelected(_ sender: UIButton) -> String {
         var url = ""
         let eventName = sender.title(for: .normal) // < this needs to be title of button clicked.
