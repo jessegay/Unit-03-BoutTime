@@ -71,6 +71,8 @@
                                                     <constraint firstAttribute="height" constant="120" id="WEe-yM-ONu"/>
                                                 </constraints>
                                                 <state key="normal" title="DownFullButton" image="down_full"/>
+                                                <state key="selected" image="down_full_selected"/>
+                                                <state key="highlighted" image="down_full_selected"/>
                                                 <connections>
                                                     <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qa0-xB-bbN"/>
                                                 </connections>
@@ -111,6 +113,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="wV3-ny-5em"/>
                                                 </constraints>
                                                 <state key="normal" title="UpHalfButton0" image="up_half"/>
+                                                <state key="highlighted" image="up_half_selected"/>
                                                 <connections>
                                                     <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Frc-RM-diS"/>
                                                 </connections>
@@ -121,6 +124,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="l3P-5y-AKL"/>
                                                 </constraints>
                                                 <state key="normal" title="DownHalfButton0" image="down_half"/>
+                                                <state key="highlighted" image="down_half_selected"/>
                                                 <connections>
                                                     <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AJW-XK-qCN"/>
                                                 </connections>
@@ -158,6 +162,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="fwG-gm-Ikj"/>
                                                 </constraints>
                                                 <state key="normal" title="UpHalfButton0" image="up_half"/>
+                                                <state key="highlighted" image="up_half_selected"/>
                                                 <connections>
                                                     <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IWX-Mo-7bu"/>
                                                 </connections>
@@ -168,6 +173,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="MEW-Cg-n0k"/>
                                                 </constraints>
                                                 <state key="normal" title="DownHalfButton0" image="down_half"/>
+                                                <state key="highlighted" image="down_half_selected"/>
                                                 <connections>
                                                     <action selector="moveDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y9O-85-rdB"/>
                                                 </connections>
@@ -205,6 +211,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="NnN-cR-WiF"/>
                                                 </constraints>
                                                 <state key="normal" title="UpFullButton" image="up_full"/>
+                                                <state key="highlighted" image="up_full_selected"/>
                                                 <connections>
                                                     <action selector="moveUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FCj-i8-yby"/>
                                                 </connections>
@@ -368,10 +375,14 @@
     </scenes>
     <resources>
         <image name="down_full" width="158" height="457"/>
+        <image name="down_full_selected" width="158" height="457"/>
         <image name="down_half" width="158" height="229"/>
+        <image name="down_half_selected" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
         <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
+        <image name="up_full_selected" width="158" height="457"/>
         <image name="up_half" width="158" height="229"/>
+        <image name="up_half_selected" width="158" height="229"/>
     </resources>
 </document>
