@@ -18,26 +18,31 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
    
     // MARK: - Outlets.  Use @IBOutlet collection instead of individual @IBOutlets for every label
-    
-    
     @IBOutlet var eventViews: [UIView]!
-    // FIXME: Add tap gesture recognizers to the views
+
     // Connect historical labels to this outlet in order
     @IBOutlet var eventLabels: [UILabel]!
     
     // Tap gesture recognizers for the 4 eventViews
     @IBOutlet var eventTapGestures: [UITapGestureRecognizer]!
     
+    // nextRound button
     @IBOutlet weak var nextRound: UIButton!
     
+    // instructions
     @IBOutlet weak var instructions: UILabel!
     
+    // countdown timer
     @IBOutlet weak var labelCountdown: UILabel!
     
+    // checkFinalScore button
     @IBOutlet weak var checkFinalScore: UIButton!
-    //@IBOutlet weak var score: UILabel!
     
-    @IBOutlet weak var resultsStack: UIStackView!
+    // moveEventButtons
+    @IBOutlet var moveEventButtons: [UIButton]!
+    
+    // resultsStack. I think I can delete. This was left over from early version. I think can delete.
+    //@IBOutlet weak var resultsStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +57,9 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             }
         
         
-        // Programatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
+        // FIXME: Delete. Ask if I have timeProgramatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
         
-        labelCountdown.center.y = nextRound.center.y
+        // labelCountdown.center.y = nextRound.center.y
         
         }
     
@@ -64,15 +69,14 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         } // Do I need this helper or should I just use myGameManager.eventsThisRound = myGameManager.getArrayOfRandomEvents() in viewDidLoad?
     
         func displayEvents() {
-        // assign myGameManager.eventsThisRound contents to the labels in storyboard.
-        // check contents of eventsThisRound. Can be deleted eventually.
+        // Assign myGameManager.eventsThisRound contents to the labels in storyboard.
+            // Check contents of eventsThisRound. Can use to cheat by checking dates :)
         print(myGameManager.eventsThisRound)
         // assign them to eventLabels
             for (event, label) in zip(myGameManager.eventsThisRound, eventLabels) {
             label.text = event.eventName
             }
         }
-        // If I have to change the eventLabels to eventButtons, then I guess this would just become for (event, button) in zip(myGameManager.eventsThisRound, eventButtons) {button.title = event.eventName}
     
         // Assign tags of events in eventsThisRound to eventViews. Then use eventView.tag to refer back to the event to know which view was pressed to get URL. Call this upon first load, and every time someone moves an event.
         func idToTag() {
@@ -102,16 +106,17 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         checkFinalScore.isHidden = true
         // reset roundEnded so checkAnswer() can run in response to shake.
         myGameManager.roundEnded = false
-        
+        // re-enable up/down buttons
+        for button in moveEventButtons {
+            button.isUserInteractionEnabled = true
+        }
         // FIXME: Testing tag assignment upon load. Delete.
         for view in eventViews {
             print(view.tag)
         }
-        
-
     }
     // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order.
-    // FIXME: Occasionally get indexOutOfRange error from bottonUp button. Can't reproduce. Seemed to happen when I was clicking very rapidly. Could this have overwhelmed simulator?
+    // FIXME: IndexOutOfRange error from bottonUp button when I click it in between rounds. isUserInteractionEnabled = false after check answer?
     // Connect all up buttons to moveUp, and down buttons to moveDown. Remember buttons need tags 0-3 for the logic to work.
     
     @IBAction func moveUp(_ sender: UIButton) {
@@ -165,6 +170,10 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             // Change instructions to "Tap events to learn more"
             instructions.text = "Tap events to learn more"
         
+            // disable moveEventButtons
+            for button in moveEventButtons {
+                button.isUserInteractionEnabled = false
+            }
             // reset myGameManager.alreadyUsedInRound to empty
             myGameManager.alreadyUsedInRound = []
             // reset myGameManager.eventsThisRound to empty
@@ -177,15 +186,15 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             print("You've played \(myGameManager.roundsPlayed) rounds")
             print("You have \(myGameManager.correctResponses) correct responses")
         
-        // show/hide end of game buttons
-        if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
-            print("game over") // for testing
-            labelCountdown.isHidden = true
-            nextRound.isHidden = true
-            checkFinalScore.isHidden = false
-            // MARK: performSegue(withIdentifier: "finalScoreSegue", sender: nil) // < could use this to show score automatically (as opposed to requiring clicking of checkScore)
+            // show/hide end of game buttons
+            if myGameManager.roundsPlayed == myGameManager.roundsPerGame {
+                print("game over") // for testing
+                labelCountdown.isHidden = true
+                nextRound.isHidden = true
+                checkFinalScore.isHidden = false
+                // MARK: performSegue(withIdentifier: "finalScoreSegue", sender: nil) // < could use this to show score automatically (as opposed to requiring clicking of checkScore)
+                }
             }
-        }
     
     
     //  Call checkAnswer() via Shake.
@@ -252,19 +261,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         return url
     }
     
-    
-    
-    
-    
-    // FIXME: Tap Gesture Recognizer Actions.
-    // Currently all 4 gesture zones are connected here, but they just call a print statement. How do I access the properties of the event in the view?
-    
-    @IBAction func eventViewTapped(_ sender: UITapGestureRecognizer) {
-        let tapProperty = sender.numberOfTapsRequired
-        print(tapProperty)
-    }
-    
-    
+
     
 }
         

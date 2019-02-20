@@ -255,7 +255,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Score" destination="1Ed-Dc-aW8" id="7nm-ev-azV"/>
                         <outlet property="checkFinalScore" destination="De4-Mh-ahn" id="Xj0-oh-Iuu"/>
                         <outlet property="instructions" destination="3jj-kC-6Cc" id="aTV-d6-Inq"/>
                         <outlet property="labelCountdown" destination="eKc-86-oyB" id="ibL-NS-BT7"/>
@@ -273,6 +272,12 @@
                         <outletCollection property="eventTapGestures" destination="aiL-lc-5ei" collectionClass="NSMutableArray" id="J3W-Om-uQq"/>
                         <outletCollection property="eventTapGestures" destination="NsX-eg-d0P" collectionClass="NSMutableArray" id="3t4-pf-oXq"/>
                         <outletCollection property="eventTapGestures" destination="aie-Aj-R6N" collectionClass="NSMutableArray" id="xS2-OJ-I8G"/>
+                        <outletCollection property="moveEventButtons" destination="uPx-6a-n6Q" collectionClass="NSMutableArray" id="qWa-N6-IWb"/>
+                        <outletCollection property="moveEventButtons" destination="50U-GF-1fg" collectionClass="NSMutableArray" id="YML-19-Oms"/>
+                        <outletCollection property="moveEventButtons" destination="j3M-T6-xN2" collectionClass="NSMutableArray" id="0CI-Ex-Cyu"/>
+                        <outletCollection property="moveEventButtons" destination="p47-JC-FUd" collectionClass="NSMutableArray" id="Hyo-Ev-8kZ"/>
+                        <outletCollection property="moveEventButtons" destination="hUB-TY-28w" collectionClass="NSMutableArray" id="yL9-4r-lCO"/>
+                        <outletCollection property="moveEventButtons" destination="TPI-Xp-ktt" collectionClass="NSMutableArray" id="vOA-AN-44u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
