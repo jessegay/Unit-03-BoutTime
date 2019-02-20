@@ -87,6 +87,18 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     // MARK: Actions
     @ IBAction func loadRound() {
+        // test inserting reset messages here:
+        // reset myGameManager.alreadyUsedInRound to empty
+        myGameManager.alreadyUsedInRound = []
+        // reset myGameManager.eventsThisRound to empty
+        myGameManager.eventsThisRound = []
+        // reset myGameManager.datesThisRound to empty
+        myGameManager.datesThisRound = []
+        // reset timer
+        timerDuration = 60
+        
+        // FIXME: Is this still the right spot for timerDuration setting?
+        
         // Set counter to :60 so it displays correctly after reloading
         labelCountdown.text = String(timerDuration)
         // Create Timer
@@ -174,7 +186,10 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             for button in moveEventButtons {
                 button.isUserInteractionEnabled = false
             }
-            // reset myGameManager.alreadyUsedInRound to empty
+        
+        // FIXME: These array reset messages should maybe be triggered by nextRound button, but they have to happen before load round. Currently since they're tacked on to checkAnswer() they mess with the ability to tapEventsToLearnMore() since the eventsThisRound is erased.
+        
+            /*// reset myGameManager.alreadyUsedInRound to empty
             myGameManager.alreadyUsedInRound = []
             // reset myGameManager.eventsThisRound to empty
             myGameManager.eventsThisRound = []
@@ -182,6 +197,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             myGameManager.datesThisRound = []
             // reset timer
             timerDuration = 60
+    */
             // Testing roundsPlayed
             print("You've played \(myGameManager.roundsPlayed) rounds")
             print("You have \(myGameManager.correctResponses) correct responses")
@@ -233,9 +249,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         }
     }
     
-    
-  
-    // FIXME: Get URL of event of label selected. Then pass this to the safariWebView.
+    // Get URL of event of label selected. Then pass this to the safariWebView.
     @IBAction func openURLOfEventTapped(_ sender: UITapGestureRecognizer) {
         var url: URL?
         guard let tag = sender.view?.tag else { return }
@@ -260,9 +274,6 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         guard let url = URL(string: event.url) else { return nil}
         return url
     }
-    
-
-    
 }
         
         
