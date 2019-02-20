@@ -22,16 +22,12 @@ class FinalScoreViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         finalScore.text = score
-        
-//        "\(myGameManager.correctResponses) / \(myGameManager.roundsPerGame)"
-        // resultsStack.isHidden = false
     }
     
     // MARK: Actions
     
     @IBAction func playAgain(_ sender: Any) {
-        // reset parameters. Can I do that from here?
-        
+
         // Navigate back to first VC
         performSegue(withIdentifier: "goBack", sender: nil)
     }

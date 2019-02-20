@@ -19,14 +19,13 @@ class GameManager {
     let eventsPerRound = 4
     var roundsPlayed = 0
     var correctResponses = 0
-    // var timePerRound = 60
+    var timePerRound = 60
     var roundEnded: Bool = false
-    var indexOfSelectedEvent = 0 // might need better name
-    var alreadyUsedInRound: [Int] = [] // use indices. Redundant?
+    var indexOfSelectedEvent = 0
+    var alreadyUsedInRound: [Int] = [] // use indices.
     var eventsThisRound: [Event] = []
     var datesThisRound: [Int] = [] // use datesThisRound.isSorted() to check if correct. Will be modified by checkAnswer() based on position of Events in eventsThisRound at time of checking
     let eventStruct = EventStruct () // This includes the array of all events which will be used to populate the labels
-    
     
     
     // MARK: Methods
@@ -57,8 +56,6 @@ class GameManager {
             }
             return randomEvents
     }
-
-
     
     // Check final order
     
@@ -70,10 +67,10 @@ class GameManager {
             return false
             }
         }
-     
-     /*
+}
+   /*
      let datesThisRound = [an array of the dates of eventsThisRound]
-     It will be modified at the time of checkAnswer() since that will reflect the order at that moment.
+     It will be checked at the time of checkAnswer() since that will reflect the order at that moment.
      Use eventsThisRound array as source of truth. Each button will increment or decrement the index of its current event and displayEvents() after every move (to update the sppearance of the labels.)
    
      ---
@@ -107,13 +104,8 @@ class GameManager {
      return true
      }
      }
-     
-     
-     
-     
+
      
      */
-    // if historicalEveent1.date > historicalEvent2.date etc. 
     
-    
-}
+

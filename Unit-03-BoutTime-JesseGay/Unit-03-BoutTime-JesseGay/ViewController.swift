@@ -41,32 +41,24 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     // moveEventButtons
     @IBOutlet var moveEventButtons: [UIButton]!
     
-    // resultsStack. I think I can delete. This was left over from early version. I think can delete.
-    //@IBOutlet weak var resultsStack: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // FIXME: Delete this print test statement. Testing that game properties get reset after returning from finalScoreView.
-        print("I've been loaded. \(myGameManager.roundsPlayed) round have been played ")
+        // Testing that game properties get reset after returning from finalScoreView.
+        print("I've been loaded. \(myGameManager.roundsPlayed) rounds have been played ")
         loadRound()
         
         // Round corners of event views. Use collection rather than doing each one separately.
         for eventView in eventViews {
             eventView.layer.cornerRadius = 4
             }
-        
-        
-        // FIXME: Delete. Ask if I have timeProgramatically make align y position of labelCountdown and nextRound. For some reason I couldn't select nextRound as an alignment parameter from IB, I could only see stack views and top level stuff. This doesn't seem to work so I've just manually pinned the labelCountdown below the allEventsStack.
-        
-        // labelCountdown.center.y = nextRound.center.y
-        
         }
     
         // MARK: - Helpers
         func getRandomEvents() {
         myGameManager.eventsThisRound = myGameManager.getArrayOfRandomEvents()
-        } // Do I need this helper or should I just use myGameManager.eventsThisRound = myGameManager.getArrayOfRandomEvents() in viewDidLoad?
+        }
     
         func displayEvents() {
         // Assign myGameManager.eventsThisRound contents to the labels in storyboard.
@@ -87,7 +79,6 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     // MARK: Actions
     @ IBAction func loadRound() {
-        // test inserting reset messages here:
         // reset myGameManager.alreadyUsedInRound to empty
         myGameManager.alreadyUsedInRound = []
         // reset myGameManager.eventsThisRound to empty
@@ -95,11 +86,8 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         // reset myGameManager.datesThisRound to empty
         myGameManager.datesThisRound = []
         // reset timer
-        timerDuration = 60
-        
-        // FIXME: Is this still the right spot for timerDuration setting?
-        
-        // Set counter to :60 so it displays correctly after reloading
+        timerDuration = myGameManager.timePerRound
+        // Display counter value
         labelCountdown.text = String(timerDuration)
         // Create Timer
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
@@ -111,7 +99,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         // Assign Event.id to eventViews.tag
         idToTag()
         // Update instructions
-        instructions.text = "Shake to complete"
+        instructions.text = "Arrange these #1 hits in order of release. Shake to complete"
         // Hide nextRound button
         nextRound.isHidden = true
         // Hide checkFinalScore button
@@ -122,7 +110,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         for button in moveEventButtons {
             button.isUserInteractionEnabled = true
         }
-        // FIXME: Testing tag assignment upon load. Delete.
+        // FIXME: Testing tag assignment upon load.
         for view in eventViews {
             print(view.tag)
         }
@@ -137,7 +125,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagAbove)
         displayEvents()
         idToTag()
-        // FIXME: Testing tag assignment upon moveUp(). Delete.
+        // FIXME: Testing tag assignment upon moveUp().
         for view in eventViews {
             print("tags are \(view.tag)")
             }
@@ -158,25 +146,26 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     func checkAnswer() {
         myGameManager.roundsPlayed += 1
-        print("check answer() happened") // for testing. Delete.
+        print("checkAnswer() happened") // for testing.
         // Create an array of dates of the events from their position AT THIS TIME. Up/down buttons will change order of Events in myGameManger.eventsThisRound.
         for Event in myGameManager.eventsThisRound {
             myGameManager.datesThisRound += [Event.date]
         }
-            print(myGameManager.datesThisRound) // for testing. Delete.
+            print(myGameManager.datesThisRound) // for testing.
         
             // Check if they are in order
-            if myGameManager.isCorrect(datesThisRound: myGameManager.datesThisRound) {
-                print("correct") // for testing. Delete.
+            let datesThisRound = myGameManager.datesThisRound
+            if myGameManager.isCorrect(datesThisRound: datesThisRound) {
+                print("correct") // for testing.
                 let successButton = UIImage(named: "next_round_success")
                 nextRound.setImage(successButton, for: .normal)
             } else {
-                // do something else.
-                print("incorrect") // for testing. Delete.
+                print("incorrect") // for testing.
               // change image to next_round_fail
                 let failButton = UIImage(named: "next_round_fail")
                 nextRound.setImage(failButton, for: .normal)
             }
+        
             // Show nextRound button
             nextRound.isHidden = false
             // Change instructions to "Tap events to learn more"
@@ -186,18 +175,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             for button in moveEventButtons {
                 button.isUserInteractionEnabled = false
             }
-        
-        // FIXME: These array reset messages should maybe be triggered by nextRound button, but they have to happen before load round. Currently since they're tacked on to checkAnswer() they mess with the ability to tapEventsToLearnMore() since the eventsThisRound is erased.
-        
-            /*// reset myGameManager.alreadyUsedInRound to empty
-            myGameManager.alreadyUsedInRound = []
-            // reset myGameManager.eventsThisRound to empty
-            myGameManager.eventsThisRound = []
-            // reset myGameManager.datesThisRound to empty
-            myGameManager.datesThisRound = []
-            // reset timer
-            timerDuration = 60
-    */
+      
             // Testing roundsPlayed
             print("You've played \(myGameManager.roundsPlayed) rounds")
             print("You have \(myGameManager.correctResponses) correct responses")
@@ -218,14 +196,13 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         if myGameManager.roundEnded == false {
           checkAnswer()
           myGameManager.roundEnded = true
-          // timerDuration = 60 // reset timer
-          timer.invalidate() // Stop the timer
+          // Stop the timer
+          timer.invalidate()
         } else {
           print("You need to play the next round to re-enable Shake!")
         }
     }
  
-    
     // Counter helper method
     @objc func counter() {
         timerDuration -= 1
@@ -233,7 +210,6 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         
         if timerDuration == 0 {
             // Stop the timer
-            // FIXME: This may be redundant if I include .invalidate and timer reset in checkAnswer()
             timer.invalidate()
             // Check Answer
             checkAnswer()
@@ -249,7 +225,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         }
     }
     
-    // Get URL of event of label selected. Then pass this to the safariWebView.
+    // Get URL of event of label selected. Then pass this to the safariWebView
     @IBAction func openURLOfEventTapped(_ sender: UITapGestureRecognizer) {
         var url: URL?
         guard let tag = sender.view?.tag else { return }
@@ -269,37 +245,10 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
     
-    // FIXME: Should this be defined in GameManager rather than in the ViewController?
     func getURLForEvent(_ event: Event) -> URL? {
         guard let url = URL(string: event.url) else { return nil}
         return url
     }
 }
         
-        
 
-// Testing
-//let test = self.myGameManager.eventStruct.eventCollection[2].url
-//let url = test.url
-//return test
-
-
-
-
-/*
- func getURLofEventSelected(_ sender: UIButton) -> String {
- var url = ""
- let eventName = sender.title(for: .normal) // < this needs to be title of button clicked.
- for event in myGameManager.eventStruct.eventCollection {
- if event.eventName == eventName {
- url = event.url
- }
- }
- return url
- }
- 
- 
- 
- 
- 
- */

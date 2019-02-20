@@ -25,11 +25,8 @@ struct EventStruct {
 
 
 
-]
-//    func getURLForEvent(_ event: Event) -> URL? {
-//        guard let url = URL(string: event.url) else { return nil}
-//        return url
-//    }   // Should this go in GameManager? Or be static?
+        ]
+
 }
     
     
