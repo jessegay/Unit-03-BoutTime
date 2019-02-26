@@ -99,7 +99,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         // Assign Event.id to eventViews.tag
         idToTag()
         // Update instructions
-        instructions.text = "Arrange these #1 hits in order of release. Shake to complete"
+        instructions.text = "Arrange these #1 hits in order of release (oldest on top.) Shake to complete"
         // Hide nextRound button
         nextRound.isHidden = true
         // Hide checkFinalScore button
