@@ -6,6 +6,7 @@
 //  Copyright © 2018 Jesse Gay. All rights reserved.
 //
 
+/*In general everything’s looking good. I like that you added a lot of comments. The only “big” thing I would change is that the user is able to tap on a view to bring up the SafariVC while the round isn’t finished yet. I would restrict that, so the user can only tap the view after the scoring is triggered. Also, in `motionEnded(_: :)` I would check if the motion is a shake motion before anything else. Having `FIXME`s in your submission might not look good either. And as a hint, if you have a selector as on line 93 of the ViewController, you can omit the `ViewController` before the name of the selector `#selector(counter)`. Other than that it’s looking good.*/
 import UIKit
 import GameKit
 import SafariServices
@@ -110,7 +111,11 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         for button in moveEventButtons {
             button.isUserInteractionEnabled = true
         }
-        // FIXME: Testing tag assignment upon load.
+        // Disable [eventTapGestures] so players can't check dates until round is done.
+        for eventTapGesture in eventTapGestures {
+            eventTapGesture.isEnabled = false
+        }
+        // MARK: Testing tag assignment upon load.
         for view in eventViews {
             print(view.tag)
         }
@@ -125,7 +130,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagAbove)
         displayEvents()
         idToTag()
-        // FIXME: Testing tag assignment upon moveUp().
+        // MARK: Testing tag assignment upon moveUp().
         for view in eventViews {
             print("tags are \(view.tag)")
             }
@@ -137,7 +142,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagBelow)
         displayEvents()
         idToTag()
-        // FIXME: Testing tag assignment upon moveDown(). Delete.
+        // MARK: Testing tag assignment upon moveDown(). Delete.
         for view in eventViews {
             print("tags are \(view.tag)")
             }
@@ -170,6 +175,10 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             nextRound.isHidden = false
             // Change instructions to "Tap events to learn more"
             instructions.text = "Tap events to learn more"
+            // Enable [eventTapGestures] so players can open SafariVC.
+            for eventTapGesture in eventTapGestures {
+                eventTapGesture.isEnabled = true
+            }
         
             // disable moveEventButtons
             for button in moveEventButtons {
