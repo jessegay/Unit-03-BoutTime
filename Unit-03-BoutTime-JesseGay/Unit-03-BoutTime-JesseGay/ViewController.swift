@@ -6,7 +6,6 @@
 //  Copyright © 2018 Jesse Gay. All rights reserved.
 //
 
-/*In general everything’s looking good. I like that you added a lot of comments. The only “big” thing I would change is that the user is able to tap on a view to bring up the SafariVC while the round isn’t finished yet. I would restrict that, so the user can only tap the view after the scoring is triggered. Also, in `motionEnded(_: :)` I would check if the motion is a shake motion before anything else. Having `FIXME`s in your submission might not look good either. And as a hint, if you have a selector as on line 93 of the ViewController, you can omit the `ViewController` before the name of the selector `#selector(counter)`. Other than that it’s looking good.*/
 import UIKit
 import GameKit
 import SafariServices
@@ -78,7 +77,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
             }
         }
     
-    // MARK: Actions
+    // MARK: - Actions
     @ IBAction func loadRound() {
         // reset myGameManager.alreadyUsedInRound to empty
         myGameManager.alreadyUsedInRound = []
@@ -91,7 +90,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         // Display counter value
         labelCountdown.text = String(timerDuration)
         // Create Timer
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.counter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counter), userInfo: nil, repeats: true)
         
         // Create array of 4 random, non-repeating events
         getRandomEvents()
@@ -101,6 +100,8 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         idToTag()
         // Update instructions
         instructions.text = "Arrange these #1 hits in order of release (oldest on top.) Shake to complete"
+        // Show counter
+        labelCountdown.isHidden = false
         // Hide nextRound button
         nextRound.isHidden = true
         // Hide checkFinalScore button
@@ -121,7 +122,6 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         }
     }
     // moveUp() swap item at index(tag+1) with item at index(tag). Then displayEvents again to update display with new order.
-    // FIXME: IndexOutOfRange error from bottonUp button when I click it in between rounds. isUserInteractionEnabled = false after check answer?
     // Connect all up buttons to moveUp, and down buttons to moveDown. Remember buttons need tags 0-3 for the logic to work.
     
     @IBAction func moveUp(_ sender: UIButton) {
@@ -142,7 +142,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
         myGameManager.eventsThisRound.swapAt(tagOfButtonPressed, tagBelow)
         displayEvents()
         idToTag()
-        // MARK: Testing tag assignment upon moveDown(). Delete.
+        // MARK: Testing tag assignment upon moveDown().
         for view in eventViews {
             print("tags are \(view.tag)")
             }
@@ -171,6 +171,8 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
                 nextRound.setImage(failButton, for: .normal)
             }
         
+            // Hide counter
+            labelCountdown.isHidden = true
             // Show nextRound button
             nextRound.isHidden = false
             // Change instructions to "Tap events to learn more"
@@ -202,7 +204,7 @@ class ViewController: UIViewController, SFSafariViewControllerDelegate {
     
     //  Call checkAnswer() via Shake.
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if myGameManager.roundEnded == false {
+        if myGameManager.roundEnded == false, motion == .motionShake {
           checkAnswer()
           myGameManager.roundEnded = true
           // Stop the timer
