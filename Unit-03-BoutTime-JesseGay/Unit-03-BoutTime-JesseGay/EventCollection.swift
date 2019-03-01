@@ -11,7 +11,7 @@ import Foundation
 // This acts as a "library" of events that each round will pull from when it populates the buttons. It could be just an array, but on the last project I was advised to use a Struct with a single array as a stored property to allow for future customization.
 
 struct EventStruct {
-    var eventCollection: [Event] = [
+    let eventCollection: [Event] = [
         Event(eventName: "\"God's Plan\" by Drake", date: 2018, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2018", id: 0),
         Event(eventName: "\"Shape of You\" by Ed Sheeran",
               date: 2017, url: "https://en.wikipedia.org/wiki/Billboard_Year-End_Hot_100_singles_of_2017", id: 1),
