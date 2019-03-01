@@ -10,7 +10,6 @@ import Foundation
 
 // Checks if an array is sorted. From https://stackoverflow.com/questions/24602595/extending-array-to-check-if-it-is-sorted-in-swift
 
-
 extension Array where Element : Comparable {
     func isSorted() -> Bool {
         guard self.count > 1 else {

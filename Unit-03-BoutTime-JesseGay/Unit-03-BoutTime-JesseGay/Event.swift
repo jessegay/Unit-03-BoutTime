@@ -6,17 +6,15 @@
 //  Copyright © 2018 Jesse Gay. All rights reserved.
 //
 
-import Foundation // Do I need this in every file?
+import Foundation
 
 // This class represents the events that will populate each label.
 
-// MARK: Can the properties be lets? I don't think they'll change so wouldn't let be more performant?
-
 struct Event {
-    var eventName: String
-    var date: Int
-    var url: String
-    var id: Int
+    let eventName: String
+    let date: Int
+    let url: String
+    let id: Int
 }
 
 

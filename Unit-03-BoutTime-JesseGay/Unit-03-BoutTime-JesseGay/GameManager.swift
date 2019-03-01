@@ -6,7 +6,6 @@
 //  Copyright © 2018 Jesse Gay. All rights reserved.
 //
 
-// "Round" in unit 2 is now "Game". "Question" in unit 2 is now "Round"
 
 import GameKit
 
@@ -68,44 +67,4 @@ class GameManager {
             }
         }
 }
-   /*
-     let datesThisRound = [an array of the dates of eventsThisRound]
-     It will be checked at the time of checkAnswer() since that will reflect the order at that moment.
-     Use eventsThisRound array as source of truth. Each button will increment or decrement the index of its current event and displayEvents() after every move (to update the sppearance of the labels.)
-   
-     ---
-     How to check if sorted:
-     2 options from: https://stackoverflow.com/questions/24602595/extending-array-to-check-if-it-is-sorted-in-swift
-     
-     Simple:
-     extension Array where Element : Comparable {
-     func isSorted() -> Bool {
-     guard self.count > 1 else {
-     return true
-     }
-     
-     for i in 1..<self.count {
-     if self[i-1] > self[i] {
-     return false
-     }
-     }
-     return true
-     }
-     }
-     
-     With arguments for type of sort:
-     extension Array where Element: Comparable {
-     func isSorted(by isOrderedBefore: (Element, Element) -> Bool) -> Bool {
-     for i in stride(from: 1, to: self.count, by: 1) {
-     if !isOrderedBefore(self[i-1], self[i]) {
-     return false
-     }
-     }
-     return true
-     }
-     }
-
-     
-     */
-    
-
+  
